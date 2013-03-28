@@ -46,9 +46,17 @@ link_files () {
 }
 
 move_oh_my_zsh_files () {
-  dest="$HOME/.oh-my-zsh"
-  mkdir "$dest/custom/plugins"
-  link_files "$DOTFILES_ROOT/custom/plugins/eliperkins" "$dest/custom/plugins/eliperkins"
+  dest="$HOME/.oh-my-zsh/custom/plugins/eliperkins"
+  if [ -f $dest ] || [ -d $dest ]
+  then
+	  rm -rf $dest
+	fi
+	mkdir "$HOME/.oh-my-zsh/custom/plugins"
+  link_files "$DOTFILES_ROOT/custom/plugins/eliperkins" $dest
+}
+
+symlink_zsh_folder () {
+	link_files "$DOTFILES_ROOT/zsh" "$HOME/.zsh"
 }
 
 install_dotfiles () {
@@ -119,8 +127,9 @@ install_dotfiles () {
 }
 
 setup_gitconfig
-move_oh_my_zsh_files
+#move_oh_my_zsh_files
 install_dotfiles
+symlink_zsh_folder
 
 echo ''
 echo '  All installed!'

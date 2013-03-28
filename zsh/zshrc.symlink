@@ -3,7 +3,9 @@ ZSH_THEME="kphoen"
 plugins=(git eliperkins ruby rails3 github osx npm)
 source $ZSH/oh-my-zsh.sh
 
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$PATH
+
+for file (~/.zsh/*.zsh) source $file
 
 # Bring in the Boxen!
 source /opt/boxen/env.sh
