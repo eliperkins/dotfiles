@@ -11,13 +11,16 @@ alias gs='git status'
 compdef _git gs=git-status
 alias gut='git'
 
-#rbenv
+# rbenv
 alias rr='rbenv rehash'
+alias rehash='rbenv rehash'
 
 # Commands starting with % for pasting from web
 alias %=' '
 alias $=' '
 
-
+# zsh
 alias reload!='. ~/.zshrc'
-alias rehash='rbenv rehash'
+
+# mine
+alias s='cd ~/src'

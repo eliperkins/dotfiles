@@ -4,8 +4,8 @@
 [hub]
   protocol = https
 [user]
-  name = Eli Perkins
-  email = eli@onemightyroar.com
+	name = Eli Perkins
+	email = eli@onemightyroar.com
   helper = osxkeychain
 [alias]
   co = checkout
@@ -14,14 +14,17 @@
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   up = pull --rebase
   punch = blame
+  ksreview = "!sh -c 'SHA=${1:-HEAD}; BRANCH=${2:-master}; if [ $SHA == $BRANCH ] ; then SHA=HEAD; fi; git difftool -y -t Kaleidoscope $BRANCH...$SHA;' -"
+  ksshow = "!sh -c 'SHA=${1:-HEAD}; git difftool -y -t Kaleidoscope $SHA^..$SHA;' -"
+  ksdiff = difftool -y -t Kaleidoscope
 [color]
   diff = auto
   status = auto
   branch = auto
   ui = true
 [core]
-  excludesfile = ~/.gitignore
-  editor = subl
+	excludesfile = /opt/boxen/config/git/gitignore
+  editor = vi
 [apply]
   whitespace = nowarn
 [mergetool]
@@ -37,12 +40,18 @@
   # Setting to git 2.0 default to surpress warning message
   default = simple
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
 [merge]
   tool = kdiff3
 [difftool]
   prompt = false
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[diff]
+	tool = Kaleidoscope
+[credential]
+	helper = osxkeychain
