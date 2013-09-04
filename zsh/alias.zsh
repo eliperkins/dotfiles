@@ -24,3 +24,6 @@ alias reload!='. ~/.zshrc'
 
 # mine
 alias s='cd ~/src'
+
+alias chrome='open /Applications/Google\ Chrome.app/'
+alias chromex='open /Applications/Google\ Chrome.app/ --args --disable-web-security'
