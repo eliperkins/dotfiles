@@ -1,10 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # bootstrap installs things.
 
 DOTFILES_ROOT="`pwd`"
 
 set -e
+
+echo ''
 
 info () {
   printf "  [ \033[00;34m..\033[0m ] $1"
@@ -43,20 +45,6 @@ setup_gitconfig () {
 link_files () {
   ln -s $1 $2
   success "linked $1 to $2"
-}
-
-move_oh_my_zsh_files () {
-  dest="$HOME/.oh-my-zsh/custom/plugins/eliperkins"
-  if [ -f $dest ] || [ -d $dest ]
-  then
-	  rm -rf $dest
-	fi
-	mkdir "$HOME/.oh-my-zsh/custom/plugins"
-  link_files "$DOTFILES_ROOT/custom/plugins/eliperkins" $dest
-}
-
-symlink_zsh_folder () {
-	link_files "$DOTFILES_ROOT/zsh" "$HOME/.zsh"
 }
 
 install_dotfiles () {
@@ -127,9 +115,7 @@ install_dotfiles () {
 }
 
 setup_gitconfig
-#move_oh_my_zsh_files
 install_dotfiles
-symlink_zsh_folder
 
 echo ''
 echo '  All installed!'

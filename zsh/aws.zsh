@@ -20,4 +20,6 @@ export AWS_RDS_HOME="/opt/boxen/homebrew/Cellar/rds-command-line-tools/1.12.002/
 # For awscli-1.0.0
 export AWS_CONFIG_FILE="$HOME/.awsrc"
 
+alias ssh-ec2='ssh -i ~/.ec2/eliperkins-omr-imac.pem'
+
 source /opt/boxen/homebrew/bin/aws_zsh_completer.sh
