@@ -1,6 +1,6 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="kphoen"
-plugins=(git eliperkins ruby rails3 github osx npm brew pod)
+plugins=(git eliperkins ruby rails github osx npm brew pod)
 source $ZSH/oh-my-zsh.sh
 
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$PATH
