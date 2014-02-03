@@ -27,3 +27,5 @@ alias s='cd ~/src'
 
 alias chrome='open /Applications/Google\ Chrome.app/'
 alias chromex='open /Applications/Google\ Chrome.app/ --args --disable-web-security'
+
+alias pbcopy_ssh='pbcopy < ~/.ssh/id_rsa.pub'
