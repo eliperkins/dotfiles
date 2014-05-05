@@ -1,16 +1,13 @@
 # Editor
 # Only set this if we haven't set $EDITOR up somewhere else previously.
 if [[ "$EDITOR" == "" ]] ; then
-  # Use sublime for my editor.
-  export EDITOR='subl'
+  # Use Atom for my editor.
+  export EDITOR='atom'
 fi
 
 fpath=($ZSH/functions $fpath)
 
 autoload -U $ZSH/functions/*(:t)
-
-# rbenv
-autoload -U ~/.rbenv/shims
 
 # Quote pasted URLs
 autoload -U url-quote-magic
