@@ -22,4 +22,4 @@ export AWS_CONFIG_FILE="$HOME/.awsrc"
 
 alias ssh-ec2='ssh -i ~/.ec2/eliperkins-omr-imac.pem'
 
-source /opt/boxen/homebrew/bin/aws_zsh_completer.sh
+source /usr/local/share/zsh/site-functions/_aws
