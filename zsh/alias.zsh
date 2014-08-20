@@ -31,3 +31,5 @@ alias pbcopy_ssh='pbcopy < ~/.ssh/id_rsa.pub'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 alias sencha="~/Library/Sencha/Cmd/3.1.2.342/sencha"
+
+alias pod_dev='~/src/Rainforest/Cocoapods/bin/pod'

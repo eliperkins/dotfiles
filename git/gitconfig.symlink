@@ -5,7 +5,7 @@
   protocol = https
 [user]
 	name = Eli Perkins
-	email = eli@onemightyroar.com
+	email = eli@robinpowered.com
   helper = osxkeychain
 [alias]
   co = checkout
@@ -23,7 +23,7 @@
   branch = auto
   ui = true
 [core]
-	excludesfile = /opt/boxen/config/git/gitignore
+	excludesfile = /Users/eliperkins/.gitignore_global
   editor = vi
 [apply]
   whitespace = nowarn
@@ -42,10 +42,10 @@
   # Setting to git 2.0 default to surpress warning message
 	default = current
 [difftool "sourcetree"]
-	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [merge]
   tool = kdiff3
@@ -55,8 +55,6 @@
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [diff]
 	tool = Kaleidoscope
-[credential]
-	helper = /opt/boxen/bin/boxen-git-credential
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
