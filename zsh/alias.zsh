@@ -27,9 +27,7 @@ alias s='cd ~/src'
 alias chrome='open /Applications/Google\ Chrome.app/'
 alias chromex='open /Applications/Google\ Chrome.app/ --args --disable-web-security'
 
-alias pbcopy_ssh='pbcopy < ~/.ssh/id_rsa.pub'
+# Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
-
-alias sencha="~/Library/Sencha/Cmd/3.1.2.342/sencha"
 
 alias pod_dev='~/src/Rainforest/Cocoapods/bin/pod'

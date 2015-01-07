@@ -1,0 +1,47 @@
+tap homebrew/dupes
+
+upgrade
+update
+
+install coreutils
+install ffmpeg
+install git
+install grc
+install hub
+install node
+install postgres
+install python
+install rbenv
+install redis
+install ruby-build
+install xcproj
+install xctool
+install z
+install zsh-completions
+
+tap caskroom/versions
+
+cask install iterm2
+cask install virtualbox
+cask install vagrant
+
+# Fonts
+tap caskroom/fonts
+
+cask install font-inconsolata-dz
+cask install font-inconsolata-dz-for-powerline
+cask install font-inconsolata-for-powerline
+cask install font-inconsolata-g-for-powerline
+cask install font-meslo-lg
+cask install font-meslo-lg-for-powerline
+cask install font-montserrat
+cask install font-open-sans
+cask install font-source-code-pro
+cask install font-yanone-kaffeesatz
+
+# thoughtbot
+tap thoughtbot/formulae
+install liftoff
+
+cask cleanup
+cleanup

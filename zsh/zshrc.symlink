@@ -43,5 +43,7 @@ unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/helpfiles
 
+. `brew --prefix`/etc/profile.d/z.sh
+
 # added by travis gem
-[ -f /Users/eliperkins/.travis/travis.sh ] && source /Users/eliperkins/.travis/travis.sh
+[ -f /Users/elperkins/.travis/travis.sh ] && source /Users/elperkins/.travis/travis.sh

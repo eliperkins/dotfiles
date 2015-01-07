@@ -1,0 +1,26 @@
+'global':
+  'exception-reporting':
+    'userId': '2bec5479-9d18-45a5-5252-027db3516962'
+  'welcome':
+    'showOnStartup': false
+  'core':
+    'themes': [
+      'spacegray-dark-ui'
+      'base16-ocean-dark-spacegray'
+    ]
+  'file-types':
+    '.Podfile': 'source.ruby'
+  'editor':
+    'invisibles': {}
+    'showIndentGuide': true
+
+  'spell-check':
+    'grammars': [
+      'text.plain'
+      'source.gfm'
+      'text.git-commit'
+    ]
+'.erb.html.text':
+  'editor': {}
+'.ruby.source':
+  'editor': {}

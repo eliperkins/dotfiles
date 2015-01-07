@@ -4,8 +4,8 @@
 [hub]
   protocol = https
 [user]
-	name = Eli Perkins
-	email = eli@robinpowered.com
+	name = Perkins, Eli
+	email = eli.perkins@venmo.com
   helper = osxkeychain
 [alias]
   co = checkout
@@ -23,7 +23,7 @@
   branch = auto
   ui = true
 [core]
-	excludesfile = /Users/eliperkins/.gitignore_global
+	excludesfile = /Users/elperkins/.gitignore_global
   editor = vi
 [apply]
   whitespace = nowarn
@@ -58,3 +58,5 @@
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
+[credential]
+	helper = osxkeychain
