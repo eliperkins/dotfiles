@@ -9,6 +9,16 @@ alias ,,,='cd ../..'
 alias gsu='git submodule update --init --recursive'
 alias gs='git status'
 alias gut='git'
+alias g="git"
+alias G="git"
+
+# Vim
+alias v="vim"
+alias vv="vim ."
+
+# Archives
+alias mktar="tar -pvczf"
+alias untar="tar -zxvf"
 
 # rbenv
 alias rr='rbenv rehash'

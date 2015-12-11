@@ -1,62 +1,75 @@
-# Sample gitconfig
-#
-
-[hub]
-  protocol = https
 [user]
 	name = Perkins, Eli
 	email = eli.perkins@venmo.com
   helper = osxkeychain
+[core]
+  excludesfile = ~/.gitignore
+  editor = vim
+  whitespace = trailing-space,space-before-tab
+  pager = pager
+[init]
+  templatedir = ~/.git_template
 [alias]
+  a = add
+  ap = add -p
+  b = branch
+  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
   co = checkout
-  rank-contributers = !$ZSH/bin/git-rank-contributers
-  count   = !git shortlog -sn
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  up = pull --rebase
-  punch = blame
+  count = !git shortlog -sn
+  ctags = !.git/hooks/ctags
+  dt = difftool
+  ksdiff = difftool -y -t Kaleidoscope
   ksreview = "!sh -c 'SHA=${1:-HEAD}; BRANCH=${2:-master}; if [ $SHA == $BRANCH ] ; then SHA=HEAD; fi; git difftool -y -t Kaleidoscope $BRANCH...$SHA;' -"
   ksshow = "!sh -c 'SHA=${1:-HEAD}; git difftool -y -t Kaleidoscope $SHA^..$SHA;' -"
-  ksdiff = difftool -y -t Kaleidoscope
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  punch = push --force-with-lease
+  rank-contributers = !$ZSH/bin/git-rank-contributers
+  s = status -sb
+  up = pull --rebase
 [color]
   diff = auto
   status = auto
   branch = auto
   ui = true
-[core]
-	excludesfile = /Users/elperkins/.gitignore_global
-  editor = vi
 [apply]
   whitespace = nowarn
 [mergetool]
   keepBackup = false
-[difftool]
-  prompt = false
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[help]
-  autocorrect = 1
-[push]
-  # See `git help config` (search for push.default)
-  # for more information on different options of the below setting.
-  #
-  # Setting to git 2.0 default to surpress warning message
-	default = current
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+[diff]
+	tool = Kaleidoscope
 [merge]
   tool = kdiff3
 [difftool]
   prompt = false
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[diff]
-	tool = Kaleidoscope
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
+[help]
+  autocorrect = 1
+[push]
+	default = current
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [credential]
 	helper = osxkeychain
+[hub]
+  protocol = https
+[github]
+  user = eliperkins
+  [fetch]
+  prune = true
+[branch]
+  autosetupmerge = true
+[rerere]
+  enabled = true
+[rebase]
+  autosquash = true

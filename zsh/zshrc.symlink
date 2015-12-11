@@ -4,8 +4,12 @@ export ZSH=$HOME/.dotfiles
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/src
 
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
+# Homebrew flags
+export HOMEBREW_USE_CLANG
+
+# Stash your environment variables in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
 if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
@@ -44,6 +48,3 @@ autoload run-help
 HELPDIR=/usr/local/share/zsh/helpfiles
 
 . `brew --prefix`/etc/profile.d/z.sh
-
-# added by travis gem
-[ -f /Users/elperkins/.travis/travis.sh ] && source /Users/elperkins/.travis/travis.sh

@@ -8,19 +8,35 @@
       'spacegray-dark-ui'
       'base16-ocean-dark-spacegray'
     ]
+    'projectHome': "/Users/eliperkins/src"
   'file-types':
     '.Podfile': 'source.ruby'
-  'editor':
-    'invisibles': {}
-    'showIndentGuide': true
-
   'spell-check':
     'grammars': [
       'text.plain'
       'source.gfm'
       'text.git-commit'
     ]
-'.erb.html.text':
-  'editor': {}
-'.ruby.source':
-  'editor': {}
+  'editor':
+    'fontFamily': "Hasklig"
+    'fontSize': 18
+    'invisibles': {}
+    'useHardwareAcceleration': false
+  'linter': {}
+  'linter-flake8': {}
+  'autosave':
+    'enabled': true
+  'tree-view':
+    'hideVcsIgnoredFiles': true
+    'hideIgnoredNames': true
+  'vim-mode':
+    'useSmartcaseForSearch': true
+  'recent-files':
+    'updated': false
+  'bracket-matcher':
+    'autocompleteBrackets': false
+    'autocompleteSmartQuotes': false
+  'autocomplete':
+    'includeCompletionsFromAllBuffers': true
+  'fuzzy-finder': {}
+  'tabs': {}

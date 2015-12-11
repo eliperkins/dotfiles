@@ -10,12 +10,12 @@ if test ! $(which brew)
 then
   echo "  Installing Homebrew for you."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /tmp/homebrew-install.log
-fi
 
-if (( $+commands[brew cask] ))
-then
-  brew install caskroom/cask/brew-cask
-fi
+  if (( $+commands[brew cask] ))
+  then
+    brew install caskroom/cask/brew-cask
+  fi
 
-brew tap homebrew/boneyard
-brew bundle ./homebrew/Brewfile
+  brew tap homebrew/boneyard
+  brew bundle ./homebrew/Brewfile
+fi
