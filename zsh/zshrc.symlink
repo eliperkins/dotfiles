@@ -43,8 +43,8 @@ done
 
 unset config_files
 
-unalias run-help
-autoload run-help
-HELPDIR=/usr/local/share/zsh/helpfiles
-
 . `brew --prefix`/etc/profile.d/z.sh
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+
+export PATH="$HOME/.yarn/bin:$PATH"
