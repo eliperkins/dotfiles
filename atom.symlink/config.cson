@@ -1,42 +1,85 @@
-'global':
-  'exception-reporting':
-    'userId': '2bec5479-9d18-45a5-5252-027db3516962'
-  'welcome':
-    'showOnStartup': false
-  'core':
-    'themes': [
-      'spacegray-dark-ui'
-      'base16-ocean-dark-spacegray'
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "3fdf95de-f17b-4c91-ae3c-a6d7b9ad2173"
+  autocomplete:
+    includeCompletionsFromAllBuffers: true
+  autosave:
+    enabled: true
+  "bracket-matcher":
+    autocompleteBrackets: false
+    autocompleteSmartQuotes: false
+  core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+        ".flowconfig"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    disabledPackages: [
+      "tree-view"
+      "linter"
     ]
-    'projectHome': "/Users/eliperkins/src"
-  'file-types':
-    '.Podfile': 'source.ruby'
-  'spell-check':
-    'grammars': [
-      'text.plain'
-      'source.gfm'
-      'text.git-commit'
+    projectHome: "/Users/eliperkins/src"
+    telemetryConsent: "limited"
+    themes: [
+      "spacegray-dark-ui"
+      "base16-ocean-dark-syntax"
     ]
-  'editor':
-    'fontFamily': "Hasklig"
-    'fontSize': 18
-    'invisibles': {}
-    'useHardwareAcceleration': false
-  'linter': {}
-  'linter-flake8': {}
-  'autosave':
-    'enabled': true
-  'tree-view':
-    'hideVcsIgnoredFiles': true
-    'hideIgnoredNames': true
-  'vim-mode':
-    'useSmartcaseForSearch': true
-  'recent-files':
-    'updated': false
-  'bracket-matcher':
-    'autocompleteBrackets': false
-    'autocompleteSmartQuotes': false
-  'autocomplete':
-    'includeCompletionsFromAllBuffers': true
-  'fuzzy-finder': {}
-  'tabs': {}
+  editor:
+    fontFamily: "Hasklig"
+    fontSize: 19
+    invisibles: {}
+    useHardwareAcceleration: false
+  "exception-reporting":
+    userId: "2bec5479-9d18-45a5-5252-027db3516962"
+  "file-types":
+    ".Podfile": "source.ruby"
+  "fuzzy-finder": {}
+  linter: {}
+  "linter-eslint": {}
+  "linter-flake8": {}
+  nuclide:
+    "nuclide-diagnostics-store": {}
+    "nuclide-flow":
+      canUseFlowBin: true
+      enableStructuredTypeHints: true
+      excludeOtherAutocomplete: true
+    "nuclide-home":
+      showHome: false
+    "nuclide-python":
+      lintOnFly: true
+  "proto-repl":
+    autoPrettyPrint: true
+    leinPath: "/usr/local/bin/lein"
+  "recent-files":
+    updated: false
+  "spell-check":
+    grammars: [
+      "text.plain"
+      "source.gfm"
+      "text.git-commit"
+    ]
+  tabs: {}
+  "tool-bar":
+    visible: false
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+  "vim-mode":
+    useSmartcaseForSearch: true
+  welcome:
+    showOnStartup: false
+".clojure.source":
+  editor:
+    autoIndent: false
+    autoIndentOnPaste: false
+    scrollPastEnd: true
+    tabLength: 1
