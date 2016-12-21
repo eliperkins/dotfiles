@@ -1,9 +1,9 @@
 [user]
-	name = Perkins, Eli
-	email = eli.perkins@venmo.com
+	name = Eli Perkins
+	email = eli@clubhouse.io
   helper = osxkeychain
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/eliperkins/.gitignore
   editor = vim
   whitespace = trailing-space,space-before-tab
   pager = pager
@@ -52,7 +52,7 @@
 	default = current
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -73,3 +73,5 @@
   enabled = true
 [rebase]
   autosquash = true
+[commit]
+	template = /Users/eliperkins/.stCommitMsg
