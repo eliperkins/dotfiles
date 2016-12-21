@@ -1,91 +1,67 @@
-" This must be first, because it changes other options
-if &compatible
-  set nocompatible
-endif
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" Plugin setup
-filetype off
-
-"NeoBundle Scripts-----------------------------
-if has('vim_starting')
- " Required:
- set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-NeoBundle 'Shougo/vimproc.vim', {
-\ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make -f make_mac.mak',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " My Bundles here:
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'b4winckler/vim-objc'
-NeoBundle 'Blackrush/vim-gocode'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'cfdrake/vim-carthage'
-NeoBundle 'chriskempson/base16-vim'
-NeoBundle 'croaky/vim-colors-github'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'danro/rename.vim'
-NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'ervandew/supertab'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'jistr/vim-nerdtree-tabs'
-NeoBundle 'jnwhiteh/vim-golang'
-NeoBundle 'justmao945/vim-clang'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'Keith/investigate.vim'
-NeoBundle 'Keith/specta.vim'
-NeoBundle 'keith/swift.vim'
-NeoBundle 'mattn/gist-vim'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'pbrisbin/vim-mkdir'
-NeoBundle 'raichoo/haskell-vim'
-NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'sjl/vitality.vim'
-NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'thoughtbot/vim-rspec'
-NeoBundle 'tpope/vim-bundler'
-NeoBundle 'tpope/vim-cucumber'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tpope/vim-eunuch'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-git'
-NeoBundle 'tpope/vim-liquid'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'vim-scripts/camelcasemotion'
-NeoBundle 'vim-scripts/ctags.vim'
-NeoBundle 'vim-scripts/Match-Bracket-for-Objective-C'
-NeoBundle 'vim-scripts/tComment'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'b4winckler/vim-objc'
+Plugin 'Blackrush/vim-gocode'
+Plugin 'bling/vim-airline'
+Plugin 'cfdrake/vim-carthage'
+Plugin 'chriskempson/base16-vim'
+Plugin 'croaky/vim-colors-github'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'danro/rename.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'ervandew/supertab'
+Plugin 'godlygeek/tabular'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'justmao945/vim-clang'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'Keith/investigate.vim'
+Plugin 'Keith/specta.vim'
+Plugin 'keith/swift.vim'
+Plugin 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'pbrisbin/vim-mkdir'
+Plugin 'raichoo/haskell-vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'rking/ag.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'Shougo/vimshell'
+Plugin 'sjl/vitality.vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-liquid'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/camelcasemotion'
+Plugin 'vim-scripts/ctags.vim'
+Plugin 'vim-scripts/Match-Bracket-for-Objective-C'
+Plugin 'vim-scripts/tComment'
 
-call neobundle#end()
+call vundle#end()            " required
+filetype plugin indent on    " required
 
-filetype plugin indent on " Re-enable after setup
 syntax enable " Enable vim syntax highlighting as is (enable != on)
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
+PluginCheck
+"End Plugin Scripts-------------------------
 
 " Use Vim settings, rather then Vi settings. This setting must be as early as
 " possible, as it has side effects.
