@@ -2,13 +2,25 @@
   "atom-beautify":
     general:
       _analyticsUserId: "3fdf95de-f17b-4c91-ae3c-a6d7b9ad2173"
+  "autoclose-html": {}
   autocomplete:
     includeCompletionsFromAllBuffers: true
+  "autocomplete-plus":
+    confirmCompletion: "enter"
+  "autocomplete-racer":
+    autocomplete:
+      general: {}
+    hyperclick: {}
   autosave:
     enabled: true
   "bracket-matcher":
     autocompleteBrackets: false
     autocompleteSmartQuotes: false
+  build: {}
+  "build-cargo":
+    extCommands:
+      cargoCheck: true
+  "close-tags": {}
   core:
     customFileTypes:
       "source.ini": [
@@ -24,50 +36,148 @@
         "BUCK"
       ]
     disabledPackages: [
-      "tree-view"
       "linter"
+      "atom-wallaby"
+      "linter-write-good"
+      "linter-rust"
+      "tokamak-terminal"
+      "vim-mode-plus"
+      "git-plus"
+      "graphql-autocomplete"
+      "tree-view"
     ]
     projectHome: "/Users/eliperkins/src"
     telemetryConsent: "limited"
     themes: [
-      "spacegray-dark-ui"
+      "nord-atom-ui"
       "base16-ocean-dark-syntax"
     ]
+    titleBar: "hidden"
   editor:
     fontFamily: "Hasklig"
-    fontSize: 19
+    fontSize: 20
     invisibles: {}
-    useHardwareAcceleration: false
+    showIndentGuide: true
+    useHardwareAcceleration: true
   "exception-reporting":
     userId: "2bec5479-9d18-45a5-5252-027db3516962"
+  "file-icons":
+    coloured: false
   "file-types":
     ".Podfile": "source.ruby"
   "fuzzy-finder": {}
+  "git-plus":
+    general: {}
+  "ide-flowtype":
+    tryFlowBin: true
+  "language-babel": {}
   linter: {}
-  "linter-eslint": {}
+  "linter-eslint":
+    disableWhenNoEslintConfig: false
+    eslintrcPath: "~/.eslintrc"
+    fixOnSave: true
+    globalNodePath: "/usr/local"
   "linter-flake8": {}
+  "linter-rust":
+    cargoCommand: "check"
+    cargoPath: "/usr/local/bin/cargo"
+    rustcPath: "/usr/local/bin/rustc"
+  "linter-write-good": {}
+  "lisp-paredit":
+    strict: false
+  "markdown-preview":
+    useGitHubStyle: true
+  "nord-atom-ui":
+    darkerFormFocusEffect: true
   nuclide:
+    installRecommendedPackages: true
+    "nuclide-code-format":
+      formatOnSave: true
     "nuclide-diagnostics-store": {}
+    "nuclide-diagnostics-ui":
+      showDiagnosticTraces: true
     "nuclide-flow":
       canUseFlowBin: true
       enableStructuredTypeHints: true
       excludeOtherAutocomplete: true
+      warnOnNotInstalled: false
+    "nuclide-hg-repository":
+      enableDiffStats: true
     "nuclide-home":
       showHome: false
+    "nuclide-objc":
+      enableAutomaticSquareBracketInsertion: true
+    "nuclide-ocaml": {}
     "nuclide-python":
       lintOnFly: true
+    "nuclide-react-native":
+      pathToNode: "/Users/eliperkins/.nvm/versions/node/v6.9.4/bin/node"
+    "nuclide-related-files": {}
+    use:
+      "nuclide-swift": true
+  parinfer:
+    "file-extensions": [
+      ".boot"
+      ".cl"
+      ".clj"
+      ".cljc"
+      ".cljs"
+      ".edn"
+      ".el"
+      ".lfe"
+      ".lisp"
+      ".lsp"
+      ".rkt"
+      ".scm"
+    ]
+    "show-open-file-dialog?": false
+  pigments:
+    filetypesForColorWords: [
+      "css"
+      "less"
+      "styl"
+      "stylus"
+      "sass"
+      "scss"
+      "js"
+    ]
+    groupPaletteColors: "by file"
+    markerType: "native-dot"
+    sortPaletteColors: "by name"
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+    prettierEslintOptions: {}
+    prettierOptions:
+      parser: "flow"
+      singleQuote: true
+      trailingComma: "all"
+    silenceErrors: true
+    useEslint: true
   "proto-repl":
     autoPrettyPrint: true
     leinPath: "/usr/local/bin/lein"
+  racer:
+    racerBinPath: "/Users/eliperkins/.cargo/bin/racer"
+    rustSrcPath: "/Users/eliperkins/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src"
   "recent-files":
     updated: false
+  rustfmt:
+    fmtOnSave: false
   "spell-check":
     grammars: [
       "text.plain"
       "source.gfm"
       "text.git-commit"
     ]
-  tabs: {}
+  "status-bar": {}
+  tabs:
+    alwaysShowTabBar: false
+    enableVcsColoring: true
+  tokamak:
+    racerBinPath: "/Users/eliperkins/.cargo/bin/racer"
+    rustSrcPath: "/Users/eliperkins/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src"
+    toolBinPath: "/Users/eliperkins/.cargo/bin/rustup"
   "tool-bar":
     visible: false
   "tree-view":

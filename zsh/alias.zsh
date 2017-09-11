@@ -13,8 +13,11 @@ alias g="git"
 alias G="git"
 
 # Vim
-alias v="vim"
-alias vv="vim ."
+alias v="nvim"
+alias vv="nvim ."
+
+# ls
+alias ls='ls -laGFh'
 
 # Archives
 alias mktar="tar -pvczf"

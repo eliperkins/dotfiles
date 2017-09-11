@@ -1,10 +1,12 @@
 # vim:ft=zsh ts=2 sw=2 sts=2
 
+export CLICOLOR=1
+
 autoload colors; colors;
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 ZSH_THEME_GIT_PROMPT_UNTRACKED=" ✭"
 ZSH_THEME_GIT_PROMPT_DIRTY=''
@@ -177,4 +179,4 @@ prompt_agnoster_setup() {
   zstyle ':vcs_info:git*' actionformats '%b (%a)'
 }
 
-prompt_agnoster_setup "$@"
+# prompt_agnoster_setup "$@"

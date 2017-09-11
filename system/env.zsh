@@ -1,4 +1,4 @@
-vim=$(which vim)
+vim=$(which nvim)
 export EDITOR=$vim
 
 if which clang > /dev/null; then

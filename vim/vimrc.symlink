@@ -1,67 +1,104 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
+call plug#begin('~/.vim/plugged')
 
 " My Bundles here:
-Plugin 'airblade/vim-gitgutter'
-Plugin 'b4winckler/vim-objc'
-Plugin 'Blackrush/vim-gocode'
-Plugin 'bling/vim-airline'
-Plugin 'cfdrake/vim-carthage'
-Plugin 'chriskempson/base16-vim'
-Plugin 'croaky/vim-colors-github'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'danro/rename.vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'ervandew/supertab'
-Plugin 'godlygeek/tabular'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'jnwhiteh/vim-golang'
-Plugin 'justmao945/vim-clang'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'Keith/investigate.vim'
-Plugin 'Keith/specta.vim'
-Plugin 'keith/swift.vim'
-Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim'
-Plugin 'pbrisbin/vim-mkdir'
-Plugin 'raichoo/haskell-vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'rking/ag.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/vimshell'
-Plugin 'sjl/vitality.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-cucumber'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-liquid'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/camelcasemotion'
-Plugin 'vim-scripts/ctags.vim'
-Plugin 'vim-scripts/Match-Bracket-for-Objective-C'
-Plugin 'vim-scripts/tComment'
+Plug 'airblade/vim-gitgutter'
+Plug 'b4winckler/vim-objc'
+Plug 'Blackrush/vim-gocode'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'cfdrake/vim-carthage'
+Plug 'chriskempson/base16-vim'
+Plug 'critiqjo/lldb.nvim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'danro/rename.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'ervandew/supertab'
+Plug 'godlygeek/tabular'
+Plug 'jnwhiteh/vim-golang'
+Plug 'justmao945/vim-clang'
+Plug 'Keith/investigate.vim'
+Plug 'Keith/specta.vim'
+Plug 'keith/swift.vim'
+Plug 'mattn/gist-vim'
+Plug 'mattn/webapi-vim'
+Plug 'pbrisbin/vim-mkdir'
+Plug 'raichoo/haskell-vim'
+Plug 'Raimondi/delimitMate'
+Plug 'rking/ag.vim'
+Plug 'Shougo/vimshell'
+Plug 'Shougo/deoplete.nvim'
+Plug 'steelsojka/deoplete-flow'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'sjl/vitality.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-liquid'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/camelcasemotion'
+Plug 'vim-scripts/ctags.vim'
+Plug 'vim-scripts/Match-Bracket-for-Objective-C'
+Plug 'vim-scripts/tComment'
+Plug 'w0rp/ale'
+Plug 'othree/es.next.syntax.vim'
+Plug 'mxw/vim-jsx'
+Plug 'othree/yajs.vim'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'JulesWang/css.vim'
+"Plug 'neomake/neomake'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+" Initialize plugin system
+call plug#end()
 
-syntax enable " Enable vim syntax highlighting as is (enable != on)
+let g:python_host_prog = '/Users/eliperkins/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/Users/eliperkins/.pyenv/versions/neovim3/bin/python'
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-PluginCheck
-"End Plugin Scripts-------------------------
+let g:deoplete#enable_at_startup = 1
+
+function! StrTrim(txt)
+  return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+endfunction
+
+let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
+
+if g:flow_path != 'flow not found'
+  let g:deoplete#sources#flow#flow_bin = g:flow_path
+endif
+
+let g:neosnippet#enable_completed_snippet = 1
+
+let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
+let g:neomake_jsx_enabled_makers = ['eslint', 'flow']
+
+let g:neomake_javascript_flow_exe = g:flow_path
+let g:neomake_jsx_flow_exe = g:flow_path
+
+autocmd! BufWritePost * Neomake
+
+let g:jsx_ext_required = 0
+
+" Colors
+
+let base16colorspace=256
+set termguicolors
+colorscheme base16-ocean
+
+if filereadable(expand("~/.vimrc_background"))
+  source ~/.vimrc_background
+endif
 
 " Use Vim settings, rather then Vi settings. This setting must be as early as
 " possible, as it has side effects.
@@ -91,11 +128,7 @@ set nostartofline              " Keep cursor in the same place after saves
 set showcmd                    " Show command information on the right side of the command line
 set isfname-==                 " Remove characters from filenames for gf
 
-set ruler         " show the cursor position all the time
-set incsearch     " do incremental searching
-set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
-
+" Create a directory if it doesn't exist yet
 function! s:EnsureDirectory(directory)
   if !isdirectory(expand(a:directory))
     call mkdir(expand(a:directory), 'p')
@@ -121,11 +154,6 @@ call s:EnsureDirectory(&directory)
 " On quit reset title
 let &titleold=getcwd()
 
-" Color scheme
-let base16colorspace=256  " Access colors present in 256 colorspace
-set background=dark
-silent! colorscheme base16-ocean
-
 set ttyfast                 " Set that we have a fast terminal
 set t_Co=256                " Explicitly tell Vim that the terminal supports 256 colors
 set lazyredraw              " Don't redraw vim in all situations
@@ -136,7 +164,6 @@ set showmatch               " Set show matching parenthesis
 set matchtime=2             " The amount of time matches flash
 set display=lastline        " Display super long wrapped lines
 set number                  " Shows line numbers
-set relativenumber
 set cursorline              " Highlight the line the cursor is on
 set nrformats-=octal        " Never use octal notation
 set nojoinspaces            " Don't add 2 spaces when using J
@@ -159,18 +186,10 @@ set foldmethod=indent       " Decide where to fold based
 set foldnestmax=5           " Set deepest fold to x levels
 set exrc                    " Source local .vimrc files
 set secure                  " Don't load autocmds from local .vimrc files
-set colorcolumn=+1          " Show a line past the text width
 set tags^=.tags             " Add local .tags file
 
-" Default text width to 80
-if &textwidth == 0
-  set textwidth=80
-endif
-
-" Don't have a text width for readonly files
-if &readonly
-  set textwidth=0
-endif
+" Make |:find| discover recursive paths
+set path+=**
 
 " Completion options
 set complete=.,w,b,u,t,i,kspell
@@ -183,6 +202,9 @@ set wildignore+=.hg,.git,.svn                          " Version control
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg         " binary images
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest,*.pyc " compiled object files
 set wildignore+=tags,.tags
+
+" Dictionary for custom words
+set dictionary+=/usr/share/dict/words
 
 " Set mapping and key timeouts
 set timeout
@@ -199,6 +221,32 @@ endif
 set modeline
 set modelines=2
 
+" Functions for status line config since these functions aren't loaded
+" when the vimrc is sourced
+function! CurrentTag(...)
+  if exists('g:tagbar_iconchars')
+    return call('tagbar#currenttag', a:000)
+  else
+    return ''
+  endif
+endfunction
+
+" Status line setup (without plugins)
+set laststatus=2 " Always show the statusline
+" Left Side
+set statusline=
+set statusline+=%#IncSearch#%{&paste?'\ \ PASTE\ ':''}%*
+set statusline+=\ %.50f
+set statusline+=\ %m
+set statusline+=\ %r
+set statusline+=%=
+" Right Side
+set statusline+=%{CurrentTag('%s\ <\ ','','')}
+set statusline+=%y
+set statusline+=\ \ %P
+set statusline+=-%l
+set statusline+=-%c
+
 if has('clipboard')     " If the feature is available
   set clipboard=unnamed " copy to the system clipboard
 
@@ -207,10 +255,19 @@ if has('clipboard')     " If the feature is available
   endif
 endif
 
+" Fuck you, help key.
+noremap <F1> <Nop>
+
+" Paging keys
+inoremap <PageDown> <Nop>
+inoremap <PageUp> <Nop>
+
 nnoremap Q :quit<CR>
 
+" Easier save mapping
 nnoremap W :write<CR>
 
+" Disable K
 vnoremap K <Nop>
 
 " Reselect visual blocks after movement
@@ -232,9 +289,31 @@ inoremap <Up> <C-o>gk
 nnoremap <C-u> 10<C-u>
 nnoremap <C-d> 10<C-d>
 
-" Keep search matches in the middle of the window.
-nnoremap n nzzzv
-nnoremap N Nzzzv
+" Netrw unfucking, custom gx because fugitive:// breaks the default gx
+" The key here is that the second argument is a 0 which means !remote
+nnoremap gx :call netrw#BrowseX(expand('<cfile>'), 0)<CR>
+
+" https://www.reddit.com/r/vim/comments/4jy1mh/slightly_more_subltle_n_and_n_behavior/
+" Keep search matches in the middle of the window unless the next match is in
+" the same viewport
+function! s:NextAndCenter(cmd)
+  let l:view = winsaveview()
+  try
+    execute 'normal! ' . a:cmd
+  catch /^Vim\%((\a\+)\)\=:E486/
+    " Fake a 'rethrow' of an exception without causing a 3 line error message
+    echohl ErrorMsg
+    echo 'E486: Pattern not found: ' . @/
+    echohl None
+  endtry
+
+  if l:view.topline != winsaveview().topline
+    normal! zzzv
+  endif
+endfunction
+
+nnoremap <silent> n :call <SID>NextAndCenter('n')<CR>
+nnoremap <silent> N :call <SID>NextAndCenter('N')<CR>
 
 " Remap capital y to act more like other capital letters
 nnoremap Y y$
@@ -270,12 +349,8 @@ nnoremap # :keepjumps normal! mi#`i<CR>
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-" Jump to next/previous merge conflict marker
-nnoremap <silent> ]c /\v^(\<\|\=\|\>){7}([^=].+)?$<CR>
-nnoremap <silent> [c ?\v^(\<\|\=\|\>){7}([^=].+)\?$<CR>
-
 " Close all the lists
-nnoremap <leader>q call s:CloseLists()<CR>
+nnoremap <silent> <leader>q :call <SID>CloseLists()<CR>
 function! s:CloseLists()
   lclose
   cclose
@@ -285,16 +360,15 @@ endfunction
 
 command! ClearWhitespace call s:ClearWhitespace()
 function! s:ClearWhitespace()
-  let l:backup = @/
   let l:line = line('.')
   let l:column = col('.')
-  silent! %s/\s\+$//e
-  let @/=l:backup
+  keepjumps silent! %s/\s\+$//e
   call cursor(l:line, l:column)
+  call histdel('search', -1)
 endfunction
 
 function! s:ClearWhitespaceIfExpected()
-  if &ft =~? 'markdown'
+  if &filetype =~? 'markdown'
     return
   endif
 
@@ -309,18 +383,32 @@ if &diff
   set modifiable
   set noreadonly
   if tabpagenr('$') == 1
-    nnoremap ZZ :wqall<cr>
+    nnoremap ZZ :wqall<CR>
   endif
+else
+  " Jump to next/previous merge conflict marker
+  nnoremap <silent> ]c /\v^(\<\|\=\|\>){7}([^=].+)?$<CR>
+  nnoremap <silent> [c ?\v^(\<\|\=\|\>){7}([^=].+)\?$<CR>
 endif
 
 " Position resume
 function! s:PositionRecall()
-  if &ft =~? 'gitcommit\|gitrebase'
+  if &filetype =~? 'gitcommit\|gitrebase'
     return
   endif
 
   if line("'\"") > 0 && line("'\"") <= line('$')
     execute "normal g`\"zz"
+  endif
+endfunction
+
+function! s:SetColorColumn()
+  if &textwidth == 0
+    " Set colorcolumn specifically to 80 unless textwidth is set
+    set colorcolumn=80
+  else
+    " Show a line past the text width
+    set colorcolumn=+1
   endif
 endfunction
 
@@ -341,11 +429,17 @@ augroup ft_settings
   if empty(&commentstring) | setlocal commentstring=#\ %s | endif
   autocmd FileType c,cpp,go,objc,php setlocal commentstring=//\ %s
 
+  " Treat .ipas as .zip files
+  autocmd BufReadCmd *.ipa call zip#Browse(expand("<amatch>"))
+
   " Save files on some focus lost events, like switching splits
   autocmd BufLeave,FocusLost * silent! wall
 
   " Don't auto insert a comment when using O/o for a newline
-  autocmd VimEnter,BufRead * set formatoptions-=o
+  autocmd VimEnter,BufRead,FileType * set formatoptions-=o
+
+  " Set color column based on textwidth setting
+  autocmd FileType * call s:SetColorColumn()
 
   " Return to the same position you left the file in
   autocmd BufRead * call s:PositionRecall()
@@ -362,74 +456,11 @@ augroup cursorline
   autocmd WinLeave * setlocal nocursorline
 augroup END
 
-" Display extra whitespace
-set list listchars=tab:»·,trail:·
+" ObjC curly brace error fix
+let g:c_no_curly_error = 1
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
-" GVim
-if has('gui_running')
-  set guifont=Menlo:h15
-  set guioptions=egmrt " hide the gui menubar
-endif
-
-" Syntastic
-let g:syntastic_check_on_open = 1
-let g:syntastic_always_populate_loc_list = 1
-
-let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
-let g:syntastic_python_flake8_args = "--ignore = E501"
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_haskell_checkers = ['ghc-mod', 'hdevtools']
-let g:hdevtools_options = '-g -Wall'
-
-let g:syntastic_objc_compiler = 'clang'
-let g:syntastic_objcpp_compiler = 'clang'
-" let g:syntastic_objc_gcc_quiet_messages = { "regex": 'file not found' }
-let g:syntastic_objc_check_header = 1
-
-let s:pch_paths = ['*/*.pch', 'Resources/*/*.pch']
-for path in s:pch_paths
-  if !empty(glob(path))
-    let b:syntastic_objc_cflags = '-include ' . expand(path)
-    break
-  endif
-endfor
-
-" Allow toggling of syntastic errors list
-" http://stackoverflow.com/questions/17512794/toggle-error-location-panel-in-syntastic
-function! ToggleErrors()
-  " Check the total number of open windows
-  let old_last_winnr = winnr('$')
-  " Attempt to close the location list
-  lclose
-  " If there are still the same number of windows
-  " Open the errors list
-  if old_last_winnr == winnr('$')
-    Errors
-  endif
-endfunction
-nnoremap <leader>e :call ToggleErrors()<cr>
-
-let g:loaded_netrw       = 1
-let g:loaded_netrwPlugin = 1
-
-let g:nerdtree_tabs_open_on_console_startup=1
-
-" Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
-endif
+" https://github.com/thoughtbot/dotfiles/pull/471
+let g:is_posix = 1
 
 " ObjC curly brace error fix
 let g:c_no_curly_error = 1
@@ -445,190 +476,40 @@ let g:clang_use_library = 1
 let g:clang_auto_user_options = "compile_commands.json"
 let g:clang_make_default_keymappings = 0
 
-" vim-markdown
-let g:markdown_fenced_languages = ['ruby', 'sh', 'objc', 'vim', 'swift']
-
-" All of supertab in one function. #trolol
-let g:invalid_tab_chars = ['^', '\^', '\s', '#', '/', '\\', '*']
-function! ForceTab()
-  let column = col('.') - 1
-  let lastchar = getline('.')[column - 1]
-  let iskeychar = lastchar =~ '\k' || lastchar == '.'
-  let invalidchar = index(g:invalid_tab_chars, lastchar) < 0
-  return !(column > 0 && (iskeychar && invalidchar))
-endfunction
-
-" Gist support
-let g:gist_detect_filetype = 1
-let g:gist_clip_command = 'pbcopy'
-let g:gist_show_privates = 1
-let g:gist_post_private = 1
-
 " Dash support
 let g:investigate_use_dash=1
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
+" ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
+let s:opam_share_dir = system("opam config var share")
+let s:opam_share_dir = substitute(s:opam_share_dir, '[\r\n]*$', '', '')
 
-" vitality.vim
-let g:vitality_fix_cursor = 0
-" Need to make tmux FocusLost events work in Terminal.app
-let g:vitality_always_assume_iterm = 1
+let s:opam_configuration = {}
 
-" Type modifiers
-syn keyword objcTypeModifier
-      \ __autoreleasing
-      \ __block
-      \ __bridge
-      \ __bridge_retained
-      \ __bridge_transfer
-      \ __strong
-      \ __typeof
-      \ __unsafe_unretained
-      \ __weak
-
-" Property keywords - these are only highlighted inside '@property (...)'
-syn keyword objcPropertyAttribute contained
-      \ assign
-      \ copy
-      \ getter
-      \ nonatomic
-      \ readonly
-      \ readwrite
-      \ retain
-      \ setter
-      \ strong
-      \ weak
-
-syn match objcProperty display "^\s*@property\>\s*([^)]*)" contains=objcPropertyAttribute
-
-" The @property directive must be defined after objcProperty or it won't be
-" highlighted
-syn match objcDirective "@property\|@synthesize\|@dynamic\|@package"
-
-syn match objcPointerClass "\v\h+(\s*[*])@="
-syn match objcDotProperty "\v(\.)@<=\h+"
-syn match objcInstanceVariable "\(*\|\[\| \)\@<=_\h\+"
-
-syn match objcCFunction "\v\w+[(]@="
-syn match objcPrimitives "NSInteger\|NSUInteger\|CGFloat\|NSTimeInterval"
-
-syn region objc2Hash transparent matchgroup=objc2HashBraces start="@{" end="}"
-syn region objc2Array transparent matchgroup=objc2ArrayBraces start="@\[" end="]"
-syn region objc2Number transparent matchgroup=objc2NumberBraces start="@(" end=")"
-syn region objc2Block transparent matchgroup=objc2BlockBraces start="\(\^.*\)\@<={" end="}"
-
-syn match objcMessageName "\s\@<=\w*\(]\|:\)\@=" contained
-syn match objcMessageClass "\(\[\s*\)\@<=\u\w*" contained
-syn region objcCorrectMessage transparent matchgroup=objCorrectMessage start="\[" end="\]"
-      \ contains=objc.*,cConditional,cStatement
-
-syn keyword objcWrappedConstant
-      \ nil
-      \ NO
-      \ NULL
-      \ YES
-
-syn keyword objcIBRWords
-      \ IBAction
-      \ IBOutlet
-
-" link to the standard
-hi def link objcTypeModifier                         Statement
-hi def link objcProperty                             Statement
-hi def link objcDirective                            Statement
-hi def link objcPropertyAttribute                    Statement
-hi def link objcPointerClass                         objcPointer
-hi def link objcMessageClass                         objcPointer
-hi def link objcDotProperty                          Identifier
-hi def link objcInstanceVariable                     Identifier
-hi def link objc2HashBraces                          Constant
-hi def link objc2ArrayBraces                         Constant
-hi def link objc2NumberBraces                        Constant
-hi def link objcMessageName                          Function
-hi def link objcCFunction                            Operator
-hi def link objcSpecial                              String
-hi def link objcWrappedConstant                      Statement
-hi def link objcIBRWords                             Statement
-hi def link objcPointer                              Type
-hi def link objcPrimitives                           cType
-
-" Concatenate the directory into the ls-files command
-function! s:GitListCommand(directory)
-  return "git ls-files " . a:directory . " --cached --exclude-standard --others"
+function! OpamConfOcpIndent()
+  execute "set rtp^=" . s:opam_share_dir . "/ocp-indent/vim"
 endfunction
+let s:opam_configuration['ocp-indent'] = function('OpamConfOcpIndent')
 
-" Command for searching folders even if they
-" aren't tracked with git
-function! s:SearchCommand()
-  let l:command = ""
-  if isdirectory(".git")
-    let l:command = s:GitListCommand(".")
-  endif
-
-  if strlen(l:command) < 1
-    let l:output = system("git rev-parse --show-toplevel")
-    if v:shell_error == 0
-      let l:output = substitute(l:output, "\\n", "", "")
-      let l:command = s:GitListCommand(l:output)
-    else
-      let l:command = "find * -type f -o -type l"
-    endif
-  endif
-
-  return l:command
+function! OpamConfOcpIndex()
+  execute "set rtp+=" . s:opam_share_dir . "/ocp-index/vim"
 endfunction
+let s:opam_configuration['ocp-index'] = function('OpamConfOcpIndex')
 
-function! s:EscapeFilePath(path)
-  return substitute(a:path, ' ', '\\ ', 'g')
+function! OpamConfMerlin()
+  let l:dir = s:opam_share_dir . "/merlin/vim"
+  execute "set rtp+=" . l:dir
 endfunction
+let s:opam_configuration['merlin'] = function('OpamConfMerlin')
 
-function! FuzzyFindCommand(vimCommand)
-  try
-    let selection = system(s:SearchCommand() . " | pick")
-  catch /Vim:Interrupt/
-    " Catch the ^C so that the redraw happens
-    redraw!
-    return
-  endtry
-  redraw!
-  exec ":" . a:vimCommand . " " . s:EscapeFilePath(selection)
-endfunction
-
-nnoremap <C-p>  :call FuzzyFindCommand("edit")<cr>
-nnoremap <C-p>e :call FuzzyFindCommand("edit")<cr>
-nnoremap <C-p>v :call FuzzyFindCommand("vsplit")<cr>
-nnoremap <C-p>s :call FuzzyFindCommand("split")<cr>
-
-command! GenerateCtags call s:GenerateCtags()
-function! s:GenerateCtags()
-  let tagfile = '.tags'
-  if filereadable('tags')
-    let tagfile = 'tags'
+let s:opam_packages = ["ocp-indent", "ocp-index", "merlin"]
+let s:opam_check_cmdline = ["opam list --installed --short --safe --color=never"] + s:opam_packages
+let s:opam_available_tools = split(system(join(s:opam_check_cmdline)))
+for tool in s:opam_packages
+  " Respect package order (merlin should be after ocp-index)
+  if count(s:opam_available_tools, tool) > 0
+    call s:opam_configuration[tool]()
   endif
-
-  let filepath = s:TopLevel() . tagfile
-  let cmd = "ctags -f " . filepath
-  if filereadable(filepath)
-    let cmd .= ' --append ' . expand('%')
-  else
-    let cmd .= ' --recurse .'
-  endif
-
-  silent call system(cmd)
-  let &tags .= (empty(&tags) ? '' : ',') . filepath
-endfunction
-
-function! s:TopLevel()
-  if isdirectory('.git')
-    return getcwd() . '/'
-  endif
-
-  let output = system('git rev-parse --show-toplevel')
-  if v:shell_error == 0
-    let output = substitute(output, "\\n", '', 'g')
-    return output . '/'
-  endif
-
-  return ''
-endfunction
+endfor
+" ## end of OPAM user-setup addition for vim / base ## keep this line

@@ -1,4 +1,5 @@
 set nocompatible
 runtime! python_setup.vim
+set termguicolors
 
 source ~/.vimrc

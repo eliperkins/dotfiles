@@ -48,3 +48,12 @@ unset config_files
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
 export PATH="$HOME/.yarn/bin:$PATH"
+
+autoload -Uz promptinit; promptinit
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+fpath+=~/.zfunc
+
+# OPAM configuration
+# . /Users/eliperkins/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
