@@ -1,47 +1,50 @@
-tap homebrew/dupes
+tap "homebrew/dupes"
 
-upgrade
-update
+brew "coreutils"
+brew "ffmpeg"
+brew "git"
+brew "grc"
+brew "hub"
+brew "node"
+brew "postgres"
+brew "python"
+brew "rbenv"
+brew "redis"
+brew "ruby-build"
+brew "xcproj"
+brew "xctool"
+brew "z"
+brew "zsh-completions"
 
-install coreutils
-install ffmpeg
-install git
-install grc
-install hub
-install node
-install postgres
-install python
-install rbenv
-install redis
-install ruby-build
-install xcproj
-install xctool
-install z
-install zsh-completions
+tap "caskroom/versions"
 
-tap caskroom/versions
-
-cask install iterm2
-cask install virtualbox
-cask install vagrant
+# cask "iterm2"
+cask "virtualbox"
+cask "vagrant"
 
 # Fonts
-tap caskroom/fonts
+tap "caskroom/fonts"
 
-cask install font-inconsolata-dz
-cask install font-inconsolata-dz-for-powerline
-cask install font-inconsolata-for-powerline
-cask install font-inconsolata-g-for-powerline
-cask install font-meslo-lg
-cask install font-meslo-lg-for-powerline
-cask install font-montserrat
-cask install font-open-sans
-cask install font-source-code-pro
-cask install font-yanone-kaffeesatz
+cask "font-inconsolata-dz"
+cask "font-inconsolata-dz-for-powerline"
+cask "font-inconsolata-for-powerline"
+cask "font-inconsolata-g-for-powerline"
+cask "font-meslo-lg"
+cask "font-meslo-for-powerline"
+cask "font-montserrat"
+cask "font-open-sans"
+cask "font-source-code-pro"
+cask "font-yanone-kaffeesatz"
+
+mas "Xcode", id: 497799835
+mas "Redacted", id: 984968384
+mas "Irvue", id: 1039633667
+mas "Pastebot", id: 1179623856
+mas "Spark", id: 1176895641
+mas "Xcode", id: 497799835
+mas "Tweetbot", id: 557168941
 
 # thoughtbot
-tap thoughtbot/formulae
-install liftoff
+tap "thoughtbot/formulae"
+brew "liftoff"
 
-cask cleanup
-cleanup
