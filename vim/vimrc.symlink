@@ -52,13 +52,14 @@ Plug 'vim-scripts/camelcasemotion'
 Plug 'vim-scripts/ctags.vim'
 Plug 'vim-scripts/Match-Bracket-for-Objective-C'
 Plug 'vim-scripts/tComment'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'othree/es.next.syntax.vim'
 Plug 'mxw/vim-jsx'
 Plug 'othree/yajs.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'JulesWang/css.vim'
-"Plug 'neomake/neomake'
+Plug 'neomake/neomake'
+Plug 'reasonml-editor/vim-reason'
 
 " Initialize plugin system
 call plug#end()
@@ -85,6 +86,9 @@ let g:neomake_jsx_enabled_makers = ['eslint', 'flow']
 
 let g:neomake_javascript_flow_exe = g:flow_path
 let g:neomake_jsx_flow_exe = g:flow_path
+let g:neomake_reason_enabled_makers = ['merlin']
+
+call neomake#configure#automake('w')
 
 autocmd! BufWritePost * Neomake
 
