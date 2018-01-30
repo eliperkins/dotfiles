@@ -31,7 +31,6 @@ brew 'cmake'
 brew 'coreutils'
 brew 'ctop'
 brew 'curl'
-brew 'dynamodb-local'
 brew 'elasticsearch@5.6', restart_service: true
 brew 'elm'
 brew 'ffmpeg', args: ['with-fontconfig', 'with-libass']
