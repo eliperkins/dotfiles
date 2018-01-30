@@ -1,30 +1,93 @@
+# Taps
+tap "homebrew/core"
+tap "homebrew/versions"
+tap "homebrew/boneyard"
+tap "homebrew/bundle"
+tap "homebrew/services"
+tap "getsentry/tools"
 tap "homebrew/dupes"
-
-brew "coreutils"
-brew "ffmpeg"
-brew "git"
-brew "grc"
-brew "hub"
-brew "node"
-brew "postgres"
-brew "python"
-brew "rbenv"
-brew "redis"
-brew "ruby-build"
-brew "xcproj"
-brew "xctool"
-brew "z"
-brew "zsh-completions"
-
+tap "lyft/formulae"
+tap "facebook/fb"
+tap "caskroom/cask"
 tap "caskroom/versions"
+tap "caskroom/fonts"
+tap "kylef/formulae"
+tap "neovim/neovim"
+tap "tomanthony/brews"
 
-# cask "iterm2"
+# Casks
+cask_args appdir: "/Applications"
+cask "java"
 cask "virtualbox"
 cask "vagrant"
 
-# Fonts
-tap "caskroom/fonts"
+# Brews
+brew "autoconf"
+brew "automake"
+brew "awscli"
+brew "carthage"
+brew "clang-format"
+brew "cmake"
+brew "coreutils"
+brew "ctop"
+brew "curl"
+brew "dynamodb-local"
+brew "elasticsearch@5.6", restart_service: true
+brew "elm"
+brew "ffmpeg", args: ["with-fontconfig", "with-libass"]
+brew "flow"
+brew "gdb"
+brew "gettext"
+brew "git-lfs"
+brew "git"
+brew "grc"
+brew "highlight"
+brew "hub"
+brew "imagemagick", args: ["with-fontconfig"]
+brew "infer"
+brew "ios-sim"
+brew "jq"
+brew "leiningen"
+brew "libtermkey"
+brew "libtool"
+brew "libuv"
+brew "libvterm"
+brew "mas"
+brew "mosh"
+brew "msgpack"
+brew "neovim"
+brew "node"
+brew "nvm"
+brew "openssl"
+brew "pandoc"
+brew "postgresql", restart_service: true
+brew "rbenv"
+brew "readline"
+brew "redis"
+brew "rlwrap"
+brew "ruby-build"
+brew "smlnj"
+brew "sourcekitten"
+brew "stunnel"
+brew "swiftlint"
+brew "tig"
+brew "tree"
+brew "watchman"
+brew "wget"
+brew "xcproj"
+brew "xctool"
+brew "xz"
+brew "yarn"
+brew "z"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
+brew "zsh"
+brew "getsentry/tools/sentry-cli"
+brew "kylef/formulae/swiftenv"
+brew "lyft/formulae/set-simulator-location"
+brew "tomanthony/brews/itermocil"
 
+# Fonts
 cask "font-inconsolata-dz"
 cask "font-inconsolata-dz-for-powerline"
 cask "font-inconsolata-for-powerline"
@@ -36,15 +99,16 @@ cask "font-open-sans"
 cask "font-source-code-pro"
 cask "font-yanone-kaffeesatz"
 
-mas "Xcode", id: 497799835
-mas "Redacted", id: 984968384
+# App Store apps
+mas "Blackmagic Disk Speed Test", id: 425264550
+mas "Calcbot", id: 931657367
+mas "Deckset", id: 847496013
+mas "Deliveries", id: 924726344
 mas "Irvue", id: 1039633667
 mas "Pastebot", id: 1179623856
+mas "Radium", id: 597611879
+mas "Redacted", id: 984968384
 mas "Spark", id: 1176895641
-mas "Xcode", id: 497799835
+mas "The Unarchiver", id: 425424353
 mas "Tweetbot", id: 557168941
-
-# thoughtbot
-tap "thoughtbot/formulae"
-brew "liftoff"
-
+mas "Xcode", id: 497799835
