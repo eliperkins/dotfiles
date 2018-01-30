@@ -97,6 +97,10 @@ cask 'font-montserrat'
 cask 'font-open-sans'
 cask 'font-source-code-pro'
 cask 'font-yanone-kaffeesatz'
+cask 'font-fira-mono-for-powerline'
+cask 'font-fira-mono'
+cask 'font-fira-code'
+cask 'font-hasklig'
 
 # App Store apps
 mas 'Blackmagic Disk Speed Test', id: 425264550
