@@ -9,7 +9,6 @@
   whitespace = trailing-space,space-before-tab
   pager = pager
 [init]
-  templatedir = ~/.git_template
 [alias]
   a = add
   ap = add -p
