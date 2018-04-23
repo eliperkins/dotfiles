@@ -51,6 +51,10 @@
       "git-plus"
       "graphql-autocomplete"
       "tree-view"
+      "linter-proselint"
+      "flow-ide"
+      "autocomplete-flow"
+      "linter-flow"
     ]
     projectHome: "/Users/eliperkins/src"
     telemetryConsent: "limited"
@@ -71,11 +75,11 @@
     coloured: false
   "file-types":
     ".Podfile": "source.ruby"
+  "flow-ide": {}
   "fuzzy-finder": {}
   "git-plus":
     general: {}
-  "ide-flowtype":
-    tryFlowBin: true
+  "ide-flowtype": {}
   "language-babel": {}
   linter: {}
   "linter-eslint":
@@ -94,7 +98,8 @@
   "nord-atom-ui":
     darkerFormFocusEffect: true
   nuclide:
-    "atom-ide-diagnostics-ui": {}
+    "atom-ide-diagnostics-ui":
+      showDiagnosticTraces: true
     installRecommendedPackages: true
     "nuclide-code-format":
       formatOnSave: true
@@ -105,12 +110,8 @@
       hideFindAndReplace: true
     "nuclide-flow":
       canUseFlowBin: true
-      enablePushDiagnostics: true
       enableStructuredTypeHints: true
-      excludeOtherAutocomplete: true
-      warnOnNotInstalled: false
-    "nuclide-hg-repository":
-      enableDiffStats: true
+    "nuclide-hg-repository": {}
     "nuclide-home":
       showHome: false
     "nuclide-objc":
@@ -121,8 +122,7 @@
     "nuclide-react-native":
       pathToNode: "/Users/eliperkins/.nvm/versions/node/v8.5.0/bin/node"
     "nuclide-related-files": {}
-    use:
-      "nuclide-swift": true
+    use: {}
   parinfer:
     "file-extensions": [
       ".boot"
@@ -159,7 +159,6 @@
       showInStatusBar: true
     prettierEslintOptions: {}
     prettierOptions:
-      parser: "flow"
       singleQuote: true
       trailingComma: "all"
     silenceErrors: true
