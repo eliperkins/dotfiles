@@ -55,6 +55,9 @@
       "flow-ide"
       "autocomplete-flow"
       "linter-flow"
+      "image-view"
+      "linter-swiftlint"
+      "ide-swift"
     ]
     projectHome: "/Users/eliperkins/src"
     telemetryConsent: "limited"
@@ -64,7 +67,7 @@
     ]
     titleBar: "hidden"
   editor:
-    fontFamily: "Hasklig"
+    fontFamily: "Dank Mono"
     fontSize: 19
     invisibles: {}
     showIndentGuide: true
@@ -80,6 +83,7 @@
   "git-plus":
     general: {}
   "ide-flowtype": {}
+  "ide-swift": {}
   "language-babel": {}
   linter: {}
   "linter-eslint":
@@ -122,6 +126,8 @@
     "nuclide-react-native":
       pathToNode: "/Users/eliperkins/.nvm/versions/node/v8.5.0/bin/node"
     "nuclide-related-files": {}
+    "nuclide-swift":
+      swiftToolchainPath: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain"
     use: {}
   parinfer:
     "file-extensions": [
@@ -185,6 +191,8 @@
   tabs:
     alwaysShowTabBar: false
     enableVcsColoring: true
+  teletype:
+    askBeforeJoiningPortalViaExternalApp: false
   tokamak:
     racerBinPath: "/Users/eliperkins/.cargo/bin/racer"
     rustSrcPath: "/Users/eliperkins/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src"
