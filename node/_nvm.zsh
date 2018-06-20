@@ -19,5 +19,4 @@ load-nvmrc() {
     nvm use default
   fi
 }
-add-zsh-hook chpwd load-nvmrc
 load-nvmrc
