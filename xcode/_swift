@@ -79,7 +79,7 @@ _swift_build() {
         "(--verbose -v)"{--verbose,-v}"[Increase verbosity of informational output]"
         "--no-static-swift-stdlib[Do not link Swift stdlib statically]"
         "--static-swift-stdlib[Link Swift stdlib statically]"
-        "--enable-build-manifest-caching[Enable llbuild manifest caching [Experimental]]"
+        "--enable-build-manifest-caching[Enable llbuild manifest caching]"
         "--build-tests[Build both source and test targets]"
         "--product[Build the specified product]:Build the specified product: "
         "--target[Build the specified target]:Build the specified target: "
