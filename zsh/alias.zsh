@@ -44,3 +44,5 @@ alias chromex='open /Applications/Google\ Chrome.app/ --args --disable-web-secur
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 alias pod_dev='~/src/Rainforest/Cocoapods/bin/pod'
+
+alias jscrepl='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
