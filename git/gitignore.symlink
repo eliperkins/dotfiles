@@ -42,3 +42,5 @@ Icon
 # AppCode specific files
 .idea/
 *.iml
+.vscode/*
+*/.vscode/*
