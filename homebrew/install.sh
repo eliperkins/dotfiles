@@ -17,5 +17,5 @@ then
   fi
 
   brew tap homebrew/boneyard
-  brew bundle ./homebrew/Brewfile
+  brew bundle
 fi
