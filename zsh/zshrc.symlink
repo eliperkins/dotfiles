@@ -60,3 +60,7 @@ fpath+=~/.zfunc
 
 # OPAM configuration
 # . /Users/eliperkins/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
