@@ -52,7 +52,6 @@ brew 'mosh'
 brew 'msgpack'
 brew 'neovim'
 brew 'node'
-brew 'nvm'
 brew 'openssl'
 brew 'pandoc'
 brew 'postgresql', restart_service: true
