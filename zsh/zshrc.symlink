@@ -31,9 +31,6 @@ do
   source $file
 done
 
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
-
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -Uz compinit
 compinit
@@ -58,9 +55,5 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 fpath+=~/.zfunc
 
-# OPAM configuration
-# . /Users/eliperkins/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
 . $HOME/.asdf/asdf.sh
-
 . $HOME/.asdf/completions/asdf.bash
