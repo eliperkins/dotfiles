@@ -14,23 +14,19 @@ tap 'tomanthony/brews'
 
 # Casks
 cask_args appdir: '/Applications'
-cask 'java8'
 cask 'virtualbox'
 cask 'vagrant'
 
 # Brews
 brew 'autoconf'
 brew 'automake'
-brew 'awscli'
 brew 'carthage'
 brew 'cmake'
 brew 'coreutils'
 brew 'ctop'
 brew 'curl'
-brew 'elasticsearch@5.6', restart_service: true
 brew 'elm'
 brew 'ffmpeg', args: ['with-fontconfig', 'with-libass']
-brew 'flow'
 brew 'gdb'
 brew 'gettext'
 brew 'git-lfs'
@@ -76,7 +72,6 @@ brew 'z'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 brew 'zsh'
-brew 'getsentry/tools/sentry-cli'
 brew 'kylef/formulae/swiftenv'
 brew 'lyft/formulae/set-simulator-location'
 brew 'tomanthony/brews/itermocil'
@@ -102,11 +97,8 @@ mas 'Blackmagic Disk Speed Test', id: 425264550
 mas 'Calcbot', id: 931657367
 mas 'Deckset', id: 847496013
 mas 'Deliveries', id: 924726344
-mas 'Irvue', id: 1039633667
 mas 'Pastebot', id: 1179623856
 mas 'Radium', id: 597611879
 mas 'Redacted', id: 984968384
-mas 'Spark', id: 1176895641
 mas 'The Unarchiver', id: 425424353
 mas 'Tweetbot', id: 557168941
-mas 'Xcode', id: 497799835

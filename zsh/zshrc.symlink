@@ -47,13 +47,16 @@ unset config_files
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
-export PATH="$HOME/.yarn/bin:$PATH"
-
 autoload -Uz promptinit; promptinit
-
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 fpath+=~/.zfunc
 
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
+
+# damn you random tools that want to append yourself to my $PATH
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/src/github/awssume/bin:$PATH"
+export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="/usr/local/opt/gettext/bin:$PATH"
