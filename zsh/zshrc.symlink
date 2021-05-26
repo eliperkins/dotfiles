@@ -31,9 +31,13 @@ do
   source $file
 done
 
-# initialize autocomplete here, otherwise functions won't be loaded
+fpath+=~/.zfunc
+
 autoload -Uz compinit
-compinit
+for dump in ~/.zcompdump(N.mh+12); do
+  compinit
+done
+compinit -C
 
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}
@@ -45,15 +49,8 @@ unset config_files
 
 . `brew --prefix`/etc/profile.d/z.sh
 
-test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
-
-autoload -Uz promptinit; promptinit
-
-fpath+=~/.zfunc
-
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/.asdf/asdf.sh
-source $HOME/.asdf/completions/asdf.bash
+autoload -Uz promptinit
+promptinit
 
 # damn you random tools that want to append yourself to my $PATH
 export PATH="$HOME/.yarn/bin:$PATH"
