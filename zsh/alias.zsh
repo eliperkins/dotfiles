@@ -9,8 +9,9 @@ alias ,,,='cd ../..'
 alias v="nvim"
 alias vv="nvim ."
 
-# ls
-alias ls='ls -laGFh'
+# Modern Unix https://github.com/ibraheemdev/modern-unix
+alias ls='lsd -laF'
+alias du='duf'
 
 # Archives
 alias mktar="tar -pvczf"
