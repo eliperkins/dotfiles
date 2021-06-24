@@ -33,7 +33,6 @@
   rank-contributers = !$ZSH/bin/git-rank-contributers
   s = status -sb
   up = pull --rebase
-	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
 [color]
   diff = auto
