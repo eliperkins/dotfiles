@@ -1,5 +1,5 @@
 # cd
-alias scd=='cd'
+alias scd='cd'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ,,='cd ..'

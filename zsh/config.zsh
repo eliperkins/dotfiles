@@ -118,4 +118,9 @@ bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+highlighting="$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+if test -f $highlighting
+then
+  source $highlighting
+fi
