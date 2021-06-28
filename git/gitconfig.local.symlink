@@ -1,0 +1,5 @@
+[user]
+        name = Eli Perkins
+        email = eli.j.perkins@gmail.com
+[credential]
+        helper = osxkeychain

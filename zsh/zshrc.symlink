@@ -1,8 +1,15 @@
-# shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+if [[ $CODESPACES == "true" ]]; 
+then
+  export ZSH=/workspaces/.codespaces/.persistedshare/dotfiles
+  export PROJECTS=/workspaces
+else
+  # shortcut to this dotfiles path is $ZSH
+  export ZSH=$HOME/.dotfiles
 
-# your project folder that we can `c [tab]` to
-export PROJECTS=~/src
+  # your project folder that we can `c [tab]` to
+  export PROJECTS=~/src
+fi
+
 
 # Homebrew flags
 export HOMEBREW_USE_CLANG
