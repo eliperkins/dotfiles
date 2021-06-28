@@ -25,7 +25,7 @@ if test "$(uname -s)" = "Darwin"; then
     completions="$(brew --prefix)/share/zsh-completions"
 fi
 
-if test -f $completions
+if test -f "$completions"
 then
     fpath=($completions $fpath)
 fi

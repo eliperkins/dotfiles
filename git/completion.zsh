@@ -5,7 +5,7 @@ if test "$(uname -s)" = "Darwin"; then
   completion="$(brew --prefix)/share/zsh/site-functions/_git"
 fi
 
-if test -f $completion
+if test -f "$completion"
 then
   source $completion
 fi

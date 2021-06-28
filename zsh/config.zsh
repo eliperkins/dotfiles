@@ -122,7 +122,7 @@ if test "$(uname -s)" = "Darwin"; then
   highlighting="$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
-if test -f $highlighting
+if test -f "$highlighting"
 then
   source $highlighting
 fi
