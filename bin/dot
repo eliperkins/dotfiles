@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # dot
 #
@@ -38,14 +38,14 @@ while test $# -gt 0; do
     shift
 done
 
-if [[ $CODESPACES == "true" ]]; 
+if test "$CODESPACES"; 
 then
     export ZSH=/workspaces/.codespaces/.persistedshare/dotfiles
 else
     export ZSH=$HOME/.dotfiles
 fi
 
-if [ "$(uname -s)" == "Darwin" ]; then
+if test "$(uname -s)" = "Darwin"; then
     # Set macOS defaults
     "$ZSH/macos/set-defaults.sh"
 

@@ -6,7 +6,7 @@
 # using Homebrew.
 
 # Check for Homebrew
-if test "$(uname)" = "Darwin" && test ! $(which brew)
+if test "$(uname -s)" = "Darwin" && test ! $(which brew)
 then
   echo "  Installing Homebrew for you."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" > /tmp/homebrew-install.log
