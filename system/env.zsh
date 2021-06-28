@@ -12,5 +12,3 @@ fi
 # R - output colors correctly
 # X - Don't send clear screen signal
 export LESS="ij.5KMRX"
-
-export GREP_OPTIONS="--color"
