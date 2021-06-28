@@ -21,7 +21,9 @@ zstyle ':completion:*' cache-path "$HOME/.zsh/tmp/cache"
 zstyle ':completion:*:descriptions' format '%B%d%b'
 zstyle ':completion:*:warnings' format 'No matches for: %d'
 
-completions="$(brew --prefix)/share/zsh-completions"
+if test "$(uname -s)" = "Darwin"; then
+    completions="$(brew --prefix)/share/zsh-completions"
+fi
 
 if test -f $completions
 then

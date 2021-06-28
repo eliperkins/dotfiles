@@ -2,7 +2,7 @@
 # bash `git-completion` script at $completion below (this is where Homebrew
 # tosses it, at least).
 if test "$(uname -s)" = "Darwin"; then
-  completion='$(brew --prefix)/share/zsh/site-functions/_git'
+  completion="$(brew --prefix)/share/zsh/site-functions/_git"
 fi
 
 if test -f $completion
