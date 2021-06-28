@@ -10,8 +10,15 @@ alias v="nvim"
 alias vv="nvim ."
 
 # Modern Unix https://github.com/ibraheemdev/modern-unix
-alias ls='lsd -laF'
-alias du='duf'
+if command -v lsd &> /dev/null; then
+    alias ls='lsd -laF'
+else 
+    alias ls='ls -la'
+fi
+
+if command -v duf &> /dev/null; then
+    alias du='duf'
+fi
 
 # Archives
 alias mktar="tar -pvczf"
@@ -27,10 +34,12 @@ alias reload!='. ~/.zshrc'
 # mine
 alias s='cd ~/src'
 
-alias chrome='open /Applications/Google\ Chrome.app/'
-alias chromex='open /Applications/Google\ Chrome.app/ --args --disable-web-security'
 
 # Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
-alias jscrepl='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc'
+if test "$(uname -s)" = "Darwin"; then
+    alias chrome='open /Applications/Google\ Chrome.app/'
+    alias chromex='open /Applications/Google\ Chrome.app/ --args --disable-web-security'
+    alias jscrepl='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc'
+fi
