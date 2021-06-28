@@ -9,12 +9,7 @@
 if test "$(uname)" = "Darwin" && test ! $(which brew)
 then
   echo "  Installing Homebrew for you."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" > /tmp/homebrew-install.log
-
-  if (( $+commands[brew cask] ))
-  then
-    brew install caskroom/cask/brew-cask
-  fi
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" > /tmp/homebrew-install.log
 
   brew bundle
 fi
