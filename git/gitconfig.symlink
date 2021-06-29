@@ -73,5 +73,5 @@
 	textconv = sqlite3 $1 .dump
 [includeIf "gitdir:~/src/"]
   path = ~/.gitconfig.macos
-[includeIf "gitdir:/workspaces"]
+[includeIf "gitdir:/workspaces/"]
   path = ~/.gitconfig.codespaces
