@@ -1,10 +1,10 @@
 [user]
-	email = eli.j.perkins@gmail.com
-  helper = osxkeychain
-	signingkey = 2E81378F264A8ACE
 	name = Eli Perkins
+  email = eli.j.perkins@gmail.com
+[github]
+  user = eliperkins
 [core]
-	excludesfile = /Users/eliperkins/.gitignore
+	excludesfile = ~/.gitignore
   editor = nvim
   whitespace = trailing-space,space-before-tab
   pager = delta
@@ -25,9 +25,6 @@
   count = !git shortlog -sn
   ctags = !.git/hooks/ctags
   dt = difftool
-  ksdiff = difftool -y -t Kaleidoscope
-  ksreview = "!sh -c 'SHA=${1:-HEAD}; BRANCH=${2:-master}; if [ $SHA == $BRANCH ] ; then SHA=HEAD; fi; git difftool -y -t Kaleidoscope $BRANCH...$SHA;' -"
-  ksshow = "!sh -c 'SHA=${1:-HEAD}; git difftool -y -t Kaleidoscope $SHA^..$SHA;' -"
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 	pf = push --force-with-lease
   rank-contributers = !$ZSH/bin/git-rank-contributers
@@ -41,37 +38,13 @@
   ui = true
 [apply]
   whitespace = nowarn
-[mergetool]
-  keepBackup = false
-	prompt = false
-[diff]
-	tool = Kaleidoscope
-[merge]
-	tool = Kaleidoscope
-[difftool]
-  prompt = false
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustExitCode = true
-[help]
-  autocorrect = 1
-[difftool "sourcetree"]
-	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
-[credential]
-	helper = osxkeychain
+[help]
+  autocorrect = 1
 [hub]
   protocol = https
-[github]
-  user = eliperkins
 [fetch]
   prune = true
 [rerere]
@@ -80,7 +53,6 @@
   autosquash = true
 	autostash = true
 [commit]
-	template = /Users/eliperkins/.stCommitMsg
 	gpgsign = true
 [pull]
 	autostash = true
@@ -99,3 +71,7 @@
 	required = true
 [diff "sqlite3"]
 	textconv = sqlite3 $1 .dump
+[includeIf "gitdir:~/src/"]
+  path = ~/.gitconfig.macos
+[includeIf "gitdir:/workspaces"]
+  path = ~/.gitconfig.codespaces

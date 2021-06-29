@@ -1,0 +1,6 @@
+[url "https://github.com/"]
+  insteadOf = git@github.com:
+[credential]
+  helper = cache
+[gpg]
+  program = /.codespaces/bin/gh-gpgsign
