@@ -126,11 +126,11 @@ link_file() {
 install_dotfiles() {
   info 'installing dotfiles'
 
-  local overwrite_all=false backup_all=false skip_all=false
+  overwrite_all=false backup_all=false skip_all=false
 
   if [[ $CODESPACES == "true" ]]; 
   then
-      overwrite_all=true
+    overwrite_all=true
   fi
 
   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*'); do
