@@ -50,10 +50,10 @@ setup_gitconfig() {
 link_file() {
   local src=$1 dst=$2
 
-  local overwrite=false
-  local backup=false
-  local skip=false
-  local action=false
+  local overwrite=
+  local backup=
+  local skip=
+  local action=
 
   if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
   then
