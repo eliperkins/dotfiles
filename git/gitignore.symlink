@@ -44,3 +44,5 @@ Icon
 *.iml
 .vscode/*
 */.vscode/*
+
+.rake_tasks

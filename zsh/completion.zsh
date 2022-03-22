@@ -23,9 +23,15 @@ zstyle ':completion:*:warnings' format 'No matches for: %d'
 
 if test "$(uname -s)" = "Darwin"; then
     completions="$(brew --prefix)/share/zsh-completions"
+    site_functions="$(brew --prefix)/share/zsh/site-functions"
 fi
 
 if test -f "$completions"
 then
     fpath=($completions $fpath)
+fi
+
+if test -f "$site_functions"
+then
+    fpath=($site_functions $fpath)
 fi
