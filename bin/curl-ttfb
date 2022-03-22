@@ -7,6 +7,6 @@ while (($#)); do
     echo $1
     curl -so /dev/null -H "Pragma: no-cache" -H "Cache-Control: no-cache" \
         -w "%{http_code}\tPre-Transfer: %{time_pretransfer}\tStart Transfer: %{time_starttransfer}\tTotal: %{time_total}\tSize: %{size_download}\n" \
-        "$1?`date +%s`"
+        "$1?$(date +%s)"
     shift
 done
