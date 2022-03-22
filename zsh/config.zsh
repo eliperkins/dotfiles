@@ -1,7 +1,3 @@
-fpath=($ZSH/functions $fpath)
-
-autoload -U $ZSH/functions/*(:t)
-
 # Quote pasted URLs
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
