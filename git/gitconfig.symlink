@@ -27,15 +27,15 @@
   dt = difftool
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 	pf = push --force-with-lease
-  rank-contributers = !$ZSH/bin/git-rank-contributers
   s = status -sb
   up = pull --rebase
-	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
+	recent = branch --sort=-committerdate --format='%(refname:short) (%(color:green)%(creatordate:relative))'
+	recently = !$ZSH/git/git-recently.sh
 [color]
   diff = auto
   status = auto
   branch = auto
-  ui = true
+	ui = auto
 [apply]
   whitespace = nowarn
 [filter "media"]
@@ -43,8 +43,6 @@
 	smudge = git-media-smudge %f
 [help]
   autocorrect = 1
-[hub]
-  protocol = https
 [fetch]
   prune = true
 [rerere]
