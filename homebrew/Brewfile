@@ -1,55 +1,27 @@
 # Taps
-tap 'arthurpalves/formulae'
-tap 'caskroom/cask'
-tap 'crowdin/crowdin'
-tap 'dandavison/delta', 'https://github.com/dandavison/delta'
 tap 'facebook/fb'
-tap 'getsentry/tools'
-tap 'github/bootstrap'
-tap 'github/gh'
-tap 'github/packages'
-tap 'heroku/brew'
-tap 'homebrew/bundle'
-tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
 tap 'homebrew/core'
 tap 'homebrew/services'
 tap 'kylef/formulae'
-tap 'kyoh86/tap'
-tap 'lyft/formulae'
 tap 'majd/repo'
 tap 'michaeleisel/zld'
 tap 'microsoft/git'
 tap 'neovim/neovim'
-tap 'nshipster/formulae'
 tap 'osx-cross/arm'
 tap 'osx-cross/avr'
-tap 'peripheryapp/periphery'
 tap 'qmk/qmk'
-tap 'rickard-von-essen/formulae'
 tap 'robotsandpencils/made'
-tap 'tomanthony/brews'
-tap 'woshiccm/tap'
 
 # Casks
-cask 'chromedriver'
 cask 'docker'
 cask 'gcc-arm-embedded'
-cask 'inkscape'
-cask 'ipatool'
-cask 'monitorcontrol'
-cask 'periphery'
-cask 'pusher'
 cask 'wch-ch34x-usb-serial-driver'
-cask 'wkhtmltopdf'
 cask 'zulu8'
 
 # Brews
 brew 'adr-tools'
 brew 'apktool'
-brew 'openssl@1.1'
-brew 'arduino-cli'
 brew 'aria2'
 brew 'automake'
 brew 'aws-iam-authenticator'
@@ -80,51 +52,32 @@ brew 'docker', link: false
 brew 'dtc'
 brew 'duf'
 brew 'dust'
-brew 'elm'
 brew 'exa'
 brew 'libtool'
-brew 'harfbuzz'
-brew 'libass'
 brew 'libsodium'
 brew 'ffmpeg'
-brew 'flow'
 brew 'fzf'
 brew 'gdb'
-brew 'gdk-pixbuf'
 brew 'gh'
 brew 'git'
 brew 'git-delta'
 brew 'git-lfs'
 brew 'go'
-brew 'glide'
 brew 'libgpg-error'
 brew 'gnupg'
-brew 'golang-migrate'
-brew 'pango'
 brew 'librsvg'
 brew 'graphviz'
-brew 'grc'
 brew 'protobuf'
 brew 'grpc'
-brew 'hidapi'
 brew 'highlight'
 brew 'hivemind'
 brew 'htop'
-brew 'hub'
 brew 'hyperscan'
 brew 'libheif'
 brew 'imagemagick'
-brew 'infer'
 brew 'libuv'
-brew 'node'
 brew 'ios-sim'
-brew 'jansson'
 brew 'jq'
-brew 'krb5'
-brew 'kubectl@1.14'
-brew 'kubernetes-cli'
-brew 'kustomize@2.0'
-brew 'launch_socket_server'
 brew 'launchdns', restart_service: true
 brew 'lcov'
 brew 'openjdk'
@@ -134,56 +87,37 @@ brew 'libvterm'
 brew 'lsd'
 brew 'mas'
 brew 'md5sha1sum'
-brew 'memcached', restart_service: true
 brew 'mint'
-brew 'mkcert'
 brew 'mosh'
 brew 'msgpack'
 brew 'mysql-client', link: true
-brew 'mysql@5.7', restart_service: true
-brew 'nasm'
 brew 'neovim'
 brew 'nginx', restart_service: true
 brew 'ninja'
-brew 'nss'
-brew 'nvm'
 brew 'openvpn'
 brew 'overmind'
 brew 'pandoc'
 brew 'parallel'
-brew 'pidof'
 brew 'pinentry-mac'
-brew 'postgresql', restart_service: true
 brew 'proselint'
-brew 'rakudo-star'
 brew 'ruby-build'
 brew 'redis', restart_service: true
 brew 'rlwrap'
 brew 'rust'
 brew 'rustup-init'
 brew 'shellcheck'
-brew 'socat'
-brew 'softhsm'
 brew 'sourcekitten'
-brew 'stunnel'
 brew 'subversion'
 brew 'swiftlint'
 brew 'telnet'
 brew 'the_silver_searcher'
 brew 'tig'
-brew 'tio'
 brew 'tree'
-brew 'unixodbc'
 brew 'vale'
-brew 'watch'
-brew 'watchman', link: false
-brew 'websocat'
 brew 'wget'
-brew 'wimlib'
 brew 'xcodegen'
 brew 'xcproj'
 brew 'xctool'
-brew 'yarn', link: false
 brew 'ykman'
 brew 'z'
 brew 'zlib'
@@ -191,24 +125,15 @@ brew 'zsh'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 
-brew 'artemnovichkov/projects/spasibo'
-brew 'arthurpalves/formulae/coherent-swift'
 brew 'crowdin/crowdin/crowdin@3'
 brew 'facebook/fb/idb-companion'
-brew 'getsentry/tools/sentry-cli'
-brew 'github/packages/awssume'
-brew 'heroku/brew/heroku'
 brew 'kylef/formulae/swiftenv'
-brew 'kyoh86/tap/richgo'
 brew 'lyft/formulae/set-simulator-location'
 brew 'michaeleisel/zld/zld'
-brew 'nshipster/formulae/uti'
 brew 'osx-cross/avr/avr-gcc@9'
 brew 'qmk/qmk/qmk'
-brew 'rickard-von-essen/formulae/hid_listen'
 brew 'robotsandpencils/made/xcodes'
 brew 'tomanthony/brews/itermocil'
-brew 'woshiccm/tap/pecker'
 
 # Fonts
 cask 'font-fira-code'
@@ -230,10 +155,8 @@ cask 'font-source-code-pro'
 
 # App Store apps
 mas 'Apple Configurator 2', id: 1_037_126_344
-mas 'Bear', id: 1_091_189_122
 mas 'Buildwatch', id: 1_523_347_474
 mas 'Calcbot', id: 931_657_367
-mas 'ColorSlurp', id: 1_287_239_339
 mas 'Contrast', id: 1_254_981_365
 mas 'Dato', id: 1_470_584_107
 mas 'Deckset', id: 847_496_013
@@ -242,16 +165,13 @@ mas 'Developer', id: 640_199_958
 mas 'Disk Speed Test', id: 425_264_550
 mas 'GarageBand', id: 682_658_836
 mas 'Gifski', id: 1_351_639_930
-mas 'GoldenHour', id: 1_506_521_630
 mas 'Grammarly for Safari', id: 1_462_114_288
-mas 'iMovie', id: 408_981_434
-mas 'LastPass', id: 926_036_361
 mas 'Microsoft Excel', id: 462_058_435
 mas 'Microsoft Remote Desktop', id: 1_295_203_466
 mas 'Microsoft Remote Desktop', id: 715_768_417
 mas 'Okta Extension App', id: 1_439_967_473
 mas 'Playgrounds', id: 1_496_833_156
-mas 'Poolside FM', id: 1_514_817_810
+mas 'Poolsuite FM', id: 1_514_817_810
 mas 'Radium', id: 597_611_879
 mas 'Redacted', id: 984_968_384
 mas 'Shareful', id: 1_522_267_256
