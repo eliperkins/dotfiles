@@ -7,6 +7,8 @@
 
 osascript -e 'tell application "System Preferences" to quit'
 
+echo "Setting macOS defaults..."
+
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
