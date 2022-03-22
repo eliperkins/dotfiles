@@ -1,0 +1,21 @@
+#!/bin/sh
+# Run by github/github codespaces after starting
+
+# Always want to use ZSH as my default shell (e.g. for SSH)
+if ! grep -q "root.*/bin/zsh" /etc/passwd
+then
+  chsh -s /bin/zsh root
+fi
+
+# Install some developer tools and setup Linux how I like it
+apt-get install -y \
+  exa grc ripgrep shellcheck zsh-autosuggestions \
+  locate
+
+# Delta isn't on aptitude, so we'll install it with Homebrew/Linuxbrew
+if test "$(which brew)"; then
+  brew install git-delta
+fi
+
+# Setup the database for locate
+updatedb
