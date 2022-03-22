@@ -1,5 +1,9 @@
 [user]
-        name = Eli Perkins
-        email = eli.j.perkins@gmail.com
+  name = Eli Perkins
+  email = eli.j.perkins@gmail.com
+  signingkey = 2E81378F264A8ACE
 [credential]
-        helper = osxkeychain
+  helper = osxkeychain
+[maintenance]
+  repo = /Users/eliperkins/src/github/mobile-ios
+  repo = /Users/eliperkins/src/github/github

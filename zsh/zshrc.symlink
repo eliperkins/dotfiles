@@ -10,7 +10,6 @@ else
   export PROJECTS=~/src
 fi
 
-
 # Homebrew flags
 export HOMEBREW_USE_CLANG
 

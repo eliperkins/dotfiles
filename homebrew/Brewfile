@@ -122,8 +122,6 @@ brew 'ykman'
 brew 'z'
 brew 'zlib'
 brew 'zsh'
-brew 'zsh-completions'
-brew 'zsh-syntax-highlighting'
 
 brew 'crowdin/crowdin/crowdin@3'
 brew 'facebook/fb/idb-companion'
