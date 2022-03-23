@@ -698,7 +698,7 @@ prompt_pure_state_setup() {
 	hostname='%F{$prompt_pure_colors[host]}@%m%f'
 
 	# Show Codespace name as host if inside Codespaces
-	[[ -n "${CODESPACE_NAME}" ]] && hostname='%F{$prompt_pure_colors[host]}@%m%f'"${CODESPACE_NAME}"
+	[[ -n "${CODESPACE_NAME}" ]] && hostname='%F{$prompt_pure_colors[host]}@${CODESPACE_NAME}%f'
 
 	# Show `username@host` if logged in through SSH.
 	[[ -n $ssh_connection ]] && username='%F{$prompt_pure_colors[user]}%n%f'"$hostname"
