@@ -1,3 +1,4 @@
 atom.symlink
 !atom.symlink/config.cson
 !atom.symlink/init.coffee
+**/*.zwc
