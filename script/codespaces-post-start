@@ -7,12 +7,6 @@ then
   chsh -s /bin/zsh root
 fi
 
-# Configure Linuxbrew if installed
-test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
-echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
-
 # Install some developer tools and setup Linux how I like it
 apt install -y \
   exa grc ripgrep shellcheck locate zoxide bat \
