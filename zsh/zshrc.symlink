@@ -54,7 +54,7 @@ done
 unset config_files
 
 if test "$(uname -s)" = "Darwin"; then
-  . `brew --prefix`/etc/profile.d/z.sh
+  source $(brew --prefix)/etc/profile.d/z.sh
 fi
 
 autoload -Uz promptinit
