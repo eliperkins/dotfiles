@@ -1,6 +1,6 @@
 # Skip config if not installed
 if ! command -v zoxide &> /dev/null; then
-  exit 0
+  return
 fi
 
 # =============================================================================
