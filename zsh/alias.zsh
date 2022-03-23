@@ -16,6 +16,18 @@ else
     alias ls='ls -la'
 fi
 
+if command -v bat &> /dev/null; then
+    alias cat='bat'
+fi
+
+if command -v fd &> /dev/null; then
+    alias find='fd'
+fi
+
+if command -v rg &> /dev/null; then
+    alias grep='rg'
+fi
+
 if command -v duf &> /dev/null; then
     alias du='duf'
 fi

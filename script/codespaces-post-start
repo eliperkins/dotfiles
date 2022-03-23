@@ -7,10 +7,16 @@ then
   chsh -s /bin/zsh root
 fi
 
+# Configure Linuxbrew if installed
+test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
+echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
+
 # Install some developer tools and setup Linux how I like it
-apt-get install -y \
-  exa grc ripgrep shellcheck zsh-autosuggestions \
-  locate
+apt install -y \
+  exa grc ripgrep shellcheck locate zoxide bat \
+  fd-find duf
 
 # Delta isn't on aptitude, so we'll install it with Homebrew/Linuxbrew
 if test "$(which brew)"; then
