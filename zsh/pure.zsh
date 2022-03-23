@@ -696,6 +696,10 @@ prompt_pure_state_setup() {
 	fi
 
 	hostname='%F{$prompt_pure_colors[host]}@%m%f'
+
+	# Show Codespace name as host if inside Codespaces
+	[[ -n "${CODESPACE_NAME}" ]] && hostname='%F{$prompt_pure_colors[host]}@%m%f'"${CODESPACE_NAME}"
+
 	# Show `username@host` if logged in through SSH.
 	[[ -n $ssh_connection ]] && username='%F{$prompt_pure_colors[user]}%n%f'"$hostname"
 
@@ -705,8 +709,6 @@ prompt_pure_state_setup() {
 	# Show `username@host` if root, with username in default color.
 	[[ $UID -eq 0 ]] && username='%F{$prompt_pure_colors[user:root]}%n%f'"$hostname"
 
-  # Show Codespace name as host if inside Codespaces
-	[[ -n "${CODESPACE_NAME}" ]] && username='%F{$prompt_pure_colors[user]}%n%f'"${CODESPACE_NAME}"
 
 	typeset -gA prompt_pure_state
 	prompt_pure_state[version]="1.20.1"
