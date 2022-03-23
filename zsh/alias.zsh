@@ -12,6 +12,8 @@ alias vv="nvim ."
 # Modern Unix https://github.com/ibraheemdev/modern-unix
 if command -v lsd &> /dev/null; then
     alias ls='lsd -laF'
+else if command -v exa &> /dev/null; then
+    alias ls='exa -laF'
 else 
     alias ls='ls -la'
 fi
