@@ -1,0 +1,2 @@
+command script import /usr/local/opt/chisel/libexec/fbchisellldb.py
+command script import "/Users/eliperkins/Library/Application Support/Kaleidoscope/lldb_ksdiff.py"

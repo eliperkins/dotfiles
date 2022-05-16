@@ -1,8 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 " My Bundles here:
 Plug 'airblade/vim-gitgutter'
@@ -30,8 +29,7 @@ Plug 'raichoo/haskell-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'Shougo/vimshell'
-Plug 'Shougo/deoplete.nvim'
-Plug 'steelsojka/deoplete-flow'
+"Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'sjl/vitality.vim'
@@ -60,8 +58,8 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'JulesWang/css.vim'
 Plug 'neomake/neomake'
 Plug 'reasonml-editor/vim-reason'
+Plug 'github/copilot.vim'
 
-" Initialize plugin system
 call plug#end()
 
 let g:python_host_prog = '/Users/eliperkins/.pyenv/versions/neovim2/bin/python'
@@ -73,22 +71,14 @@ function! StrTrim(txt)
   return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 endfunction
 
-let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
-
-if g:flow_path != 'flow not found'
-  let g:deoplete#sources#flow#flow_bin = g:flow_path
-endif
-
 let g:neosnippet#enable_completed_snippet = 1
 
-let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
-let g:neomake_jsx_enabled_makers = ['eslint', 'flow']
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_jsx_enabled_makers = ['eslint']
 
-let g:neomake_javascript_flow_exe = g:flow_path
-let g:neomake_jsx_flow_exe = g:flow_path
 let g:neomake_reason_enabled_makers = ['merlin']
 
-call neomake#configure#automake('w')
+" call neomake#configure#automake('w')
 
 autocmd! BufWritePost * Neomake
 
@@ -152,8 +142,8 @@ if has('persistent_undo')
   call s:EnsureDirectory(&undodir)
 endif
 
-set directory=$HOME/.tmp/vim/swap
-call s:EnsureDirectory(&directory)
+" set directory=$HOME/.tmp/vim/swap
+" call s:EnsureDirectory(&directory)
 
 " On quit reset title
 let &titleold=getcwd()
