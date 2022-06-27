@@ -13,12 +13,6 @@ tap 'osx-cross/avr'
 tap 'qmk/qmk'
 tap 'robotsandpencils/made'
 
-# Casks
-cask 'docker'
-cask 'gcc-arm-embedded'
-cask 'wch-ch34x-usb-serial-driver'
-cask 'zulu8'
-
 # Brews
 brew 'adr-tools'
 brew 'apktool'
@@ -39,7 +33,7 @@ brew 'cairo'
 brew 'carthage'
 brew 'ccache'
 brew 'certstrap'
-brew 'chisel', args: ['HEAD']
+brew 'chisel'
 brew 'cloc'
 brew 'cmake'
 brew 'container-diff'
@@ -57,7 +51,6 @@ brew 'libtool'
 brew 'libsodium'
 brew 'ffmpeg'
 brew 'fzf'
-brew 'gdb'
 brew 'gh'
 brew 'git'
 brew 'git-delta'
@@ -136,22 +129,47 @@ brew 'michaeleisel/zld/zld'
 brew 'osx-cross/avr/avr-gcc@9'
 brew 'qmk/qmk/qmk'
 brew 'robotsandpencils/made/xcodes'
-brew 'tomanthony/brews/itermocil'
+
+# Casks
+cask 'balance-lock'
+cask 'bettertouchtool'
+cask 'cron'
+cask 'docker'
+cask 'fork'
+cask 'graphql-playground'
+cask 'homebrew/cask-drivers/elgato-control-center'
+cask 'homebrew/cask-versions/figma-beta'
+cask 'homebrew/cask-versions/slack-beta'
+cask 'hot'
 cask 'ipatool'
-cask 'monitorcontrol'
+cask 'iterm2'
+cask 'kaleidoscope'
+cask 'lunar'
+cask 'mimestream'
+cask 'monodraw'
+cask 'muzzle'
+cask 'oversight'
+cask 'raycast'
+cask 'rescuetime'
+cask 'secretive'
+cask 'sf-symbols'
+cask 'sim-genie'
+cask 'spotify'
+cask 'toolreleases'
+cask 'visual-studio-code'
+cask 'wwdc'
+cask 'xcodes'
 
 # Fonts
 cask 'font-fira-code', args: { appdir: '/Applications' }
 cask 'font-fira-mono', args: { appdir: '/Applications' }
 cask 'font-fira-mono-for-powerline', args: { appdir: '/Applications' }
-cask 'font-hack-nerd-font'
+cask 'font-hack-nerd-font', args: { appdir: '/Applications' }
 cask 'font-hasklig', args: { appdir: '/Applications' }
-cask 'font-inconsolata-dz', args: { appdir: '/Applications' }
 cask 'font-inconsolata-dz-for-powerline', args: { appdir: '/Applications' }
 cask 'font-inconsolata-for-powerline', args: { appdir: '/Applications' }
 cask 'font-inconsolata-g-for-powerline', args: { appdir: '/Applications' }
-cask 'font-iosevka'
-cask 'font-jetbrains-mono-powerline'
+cask 'font-iosevka', args: { appdir: '/Applications' }
 cask 'font-meslo-for-powerline', args: { appdir: '/Applications' }
 cask 'font-meslo-lg', args: { appdir: '/Applications' }
 cask 'font-montserrat', args: { appdir: '/Applications' }
@@ -177,13 +195,12 @@ mas 'Microsoft Remote Desktop', id: 1_295_203_466
 mas 'Numbers', id: 409_203_825
 mas 'Okta Extension App', id: 1_439_967_473
 mas 'Pages', id: 409_201_541
+mas 'Pastebot', id: 1179623856
 mas 'Playgrounds', id: 1_496_833_156
 mas 'Poolsuite FM', id: 1_514_817_810
 mas 'Redacted', id: 984_968_384
+mas 'TestFlight', id: 899_247_664
 mas 'The Unarchiver', id: 425_424_353
 mas 'Things', id: 904_280_696
 mas 'Transporter', id: 1_450_874_784
 mas 'Tweetbot', id: 1_384_080_005
-mas 'Twitter', id: 1_482_454_543
-mas 'uBlock', id: 1_385_985_095
-mas 'Webcam Settings', id: 533_696_630
