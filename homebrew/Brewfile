@@ -152,6 +152,7 @@ cask 'font-open-sans'
 cask 'font-source-code-pro'
 
 # App Store apps
+mas '1Password for Safari', id: 1_569_813_296
 mas 'Apple Configurator 2', id: 1_037_126_344
 mas 'Buildwatch', id: 1_523_347_474
 mas 'Calcbot', id: 931_657_367
@@ -161,19 +162,17 @@ mas 'Deckset', id: 847_496_013
 mas 'Deliveries', id: 924_726_344
 mas 'Developer', id: 640_199_958
 mas 'Disk Speed Test', id: 425_264_550
-mas 'GarageBand', id: 682_658_836
 mas 'Gifski', id: 1_351_639_930
-mas 'Grammarly for Safari', id: 1_462_114_288
+mas 'iMovie', id: 408_981_434
+mas 'Keynote', id: 409_183_694
 mas 'Microsoft Excel', id: 462_058_435
 mas 'Microsoft Remote Desktop', id: 1_295_203_466
-mas 'Microsoft Remote Desktop', id: 715_768_417
+mas 'Numbers', id: 409_203_825
 mas 'Okta Extension App', id: 1_439_967_473
+mas 'Pages', id: 409_201_541
 mas 'Playgrounds', id: 1_496_833_156
 mas 'Poolsuite FM', id: 1_514_817_810
-mas 'Radium', id: 597_611_879
 mas 'Redacted', id: 984_968_384
-mas 'Shareful', id: 1_522_267_256
-mas 'Spark', id: 1_176_895_641
 mas 'The Unarchiver', id: 425_424_353
 mas 'Things', id: 904_280_696
 mas 'Transporter', id: 1_450_874_784
