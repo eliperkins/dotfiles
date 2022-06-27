@@ -73,3 +73,5 @@
   path = ~/.gitconfig.macos
 [includeIf "gitdir:/workspaces/"]
   path = ~/.gitconfig.codespaces
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
