@@ -134,22 +134,22 @@ brew 'robotsandpencils/made/xcodes'
 brew 'tomanthony/brews/itermocil'
 
 # Fonts
-cask 'font-fira-code'
-cask 'font-fira-mono'
-cask 'font-fira-mono-for-powerline'
+cask 'font-fira-code', args: { appdir: '/Applications' }
+cask 'font-fira-mono', args: { appdir: '/Applications' }
+cask 'font-fira-mono-for-powerline', args: { appdir: '/Applications' }
 cask 'font-hack-nerd-font'
-cask 'font-hasklig'
-cask 'font-inconsolata-dz'
-cask 'font-inconsolata-dz-for-powerline'
-cask 'font-inconsolata-for-powerline'
-cask 'font-inconsolata-g-for-powerline'
+cask 'font-hasklig', args: { appdir: '/Applications' }
+cask 'font-inconsolata-dz', args: { appdir: '/Applications' }
+cask 'font-inconsolata-dz-for-powerline', args: { appdir: '/Applications' }
+cask 'font-inconsolata-for-powerline', args: { appdir: '/Applications' }
+cask 'font-inconsolata-g-for-powerline', args: { appdir: '/Applications' }
 cask 'font-iosevka'
 cask 'font-jetbrains-mono-powerline'
-cask 'font-meslo-for-powerline'
-cask 'font-meslo-lg'
-cask 'font-montserrat'
-cask 'font-open-sans'
-cask 'font-source-code-pro'
+cask 'font-meslo-for-powerline', args: { appdir: '/Applications' }
+cask 'font-meslo-lg', args: { appdir: '/Applications' }
+cask 'font-montserrat', args: { appdir: '/Applications' }
+cask 'font-open-sans', args: { appdir: '/Applications' }
+cask 'font-source-code-pro', args: { appdir: '/Applications' }
 
 # App Store apps
 mas '1Password for Safari', id: 1_569_813_296
