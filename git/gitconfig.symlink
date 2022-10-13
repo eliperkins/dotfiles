@@ -1,6 +1,6 @@
 [user]
 	name = Eli Perkins
-  email = eli.j.perkins@gmail.com
+	email = eli.j.perkins@gmail.com
 [github]
   user = eliperkins
 [core]
@@ -60,6 +60,7 @@
   pretty = %C(yellow)%h%Cblue%d%Creset %s - %C(white)%an %Cgreen(%cr)%Creset
 [push]
 	default = current
+	autoSetupRemote = true
 [protocol]
 	version = 2
 [filter "lfs"]
@@ -73,5 +74,3 @@
   path = ~/.gitconfig.macos
 [includeIf "gitdir:/workspaces/"]
   path = ~/.gitconfig.codespaces
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
