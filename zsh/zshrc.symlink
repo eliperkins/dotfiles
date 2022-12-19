@@ -66,3 +66,6 @@ export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 
 # zprof
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
