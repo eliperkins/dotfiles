@@ -1,3 +1,3 @@
 command script import /opt/homebrew/opt/chisel/libexec/fbchisellldb.py
 command script import /Users/eliperkins/Library/Application\ Support/Kaleidoscope/lldb_ksdiff.py
-command script import /Users/eliperkins/Library/Application\ Support/Reveal/RevealServerCommands.py
+command script import /Users/eliperkins/Library/Application\ Support/Reveal/RevealLLDBCommands/reveallldb
