@@ -9,7 +9,6 @@ Plug 'b4winckler/vim-objc'
 Plug 'Blackrush/vim-gocode'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'cfdrake/vim-carthage'
 Plug 'chriskempson/base16-vim'
 Plug 'critiqjo/lldb.nvim'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -29,7 +28,7 @@ Plug 'raichoo/haskell-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'Shougo/vimshell'
-"Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'sjl/vitality.vim'
@@ -48,41 +47,30 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/camelcasemotion'
 Plug 'vim-scripts/ctags.vim'
-Plug 'vim-scripts/Match-Bracket-for-Objective-C'
 Plug 'vim-scripts/tComment'
-" Plug 'w0rp/ale'
+Plug 'w0rp/ale'
 Plug 'othree/es.next.syntax.vim'
 Plug 'mxw/vim-jsx'
 Plug 'othree/yajs.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'JulesWang/css.vim'
 Plug 'neomake/neomake'
-Plug 'reasonml-editor/vim-reason'
 Plug 'github/copilot.vim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 
 call plug#end()
 
-let g:python_host_prog = '/Users/eliperkins/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/Users/eliperkins/.pyenv/versions/neovim3/bin/python'
-
 let g:deoplete#enable_at_startup = 1
+
+let g:python3_host_prog = '/opt/homebrew/bin/python3'
 
 function! StrTrim(txt)
   return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 endfunction
 
 let g:neosnippet#enable_completed_snippet = 1
-
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_jsx_enabled_makers = ['eslint']
-
-let g:neomake_reason_enabled_makers = ['merlin']
-
-" call neomake#configure#automake('w')
-
-autocmd! BufWritePost * Neomake
-
-let g:jsx_ext_required = 0
+let g:loaded_perl_provider = 0
 
 " Colors
 
@@ -90,16 +78,9 @@ let base16colorspace=256
 set termguicolors
 colorscheme base16-ocean
 
-if filereadable(expand("~/.vimrc_background"))
-  source ~/.vimrc_background
-endif
-
 " Use Vim settings, rather then Vi settings. This setting must be as early as
 " possible, as it has side effects.
 set nocompatible
-
-" Use space as leader!
-let g:mapleader="\<Space>"
 
 " I - Disable the startup message
 " a - Avoid pressing enter after saves
@@ -142,8 +123,8 @@ if has('persistent_undo')
   call s:EnsureDirectory(&undodir)
 endif
 
-" set directory=$HOME/.tmp/vim/swap
-" call s:EnsureDirectory(&directory)
+set directory=$HOME/.tmp/vim/swap
+call s:EnsureDirectory(&directory)
 
 " On quit reset title
 let &titleold=getcwd()
@@ -249,261 +230,12 @@ if has('clipboard')     " If the feature is available
   endif
 endif
 
-" Fuck you, help key.
-noremap <F1> <Nop>
-
-" Paging keys
-inoremap <PageDown> <Nop>
-inoremap <PageUp> <Nop>
-
-nnoremap Q :quit<CR>
-
-" Easier save mapping
-nnoremap W :write<CR>
-
-" Disable K
-vnoremap K <Nop>
-
-" Reselect visual blocks after movement
-vnoremap < <gv
-vnoremap > >gv
-
-" Move as expected on wrapped lines
-noremap j gj
-noremap gj j
-noremap <Down> gj
-inoremap <Down> <C-o>gj
-noremap k gk
-noremap gk k
-noremap <Up> gk
-inoremap <Up> <C-o>gk
-
-" Computers are dumb
-" scroll gets reset every time the window is resized
-nnoremap <C-u> 10<C-u>
-nnoremap <C-d> 10<C-d>
-
-" Netrw unfucking, custom gx because fugitive:// breaks the default gx
-" The key here is that the second argument is a 0 which means !remote
-nnoremap gx :call netrw#BrowseX(expand('<cfile>'), 0)<CR>
-
-" https://www.reddit.com/r/vim/comments/4jy1mh/slightly_more_subltle_n_and_n_behavior/
-" Keep search matches in the middle of the window unless the next match is in
-" the same viewport
-function! s:NextAndCenter(cmd)
-  let l:view = winsaveview()
-  try
-    execute 'normal! ' . a:cmd
-  catch /^Vim\%((\a\+)\)\=:E486/
-    " Fake a 'rethrow' of an exception without causing a 3 line error message
-    echohl ErrorMsg
-    echo 'E486: Pattern not found: ' . @/
-    echohl None
-  endtry
-
-  if l:view.topline != winsaveview().topline
-    normal! zzzv
-  endif
-endfunction
-
-nnoremap <silent> n :call <SID>NextAndCenter('n')<CR>
-nnoremap <silent> N :call <SID>NextAndCenter('N')<CR>
-
-" Remap capital y to act more like other capital letters
-nnoremap Y y$
-
-" Force root permission saves
-cnoremap w!! w !sudo tee % >/dev/null
-
-command! -bang Q q<bang>
-command! -bang -nargs=* -complete=file W w<bang> <args>
-
 " Change the way splits open by default
 set splitbelow
 set splitright
 
-" Better movement
-nnoremap H ^
-vnoremap H ^
-
-" Switch to the last file
-nnoremap <leader><leader> <C-^>
-
-" Move to last edit location and put it in the center of the screen
-nnoremap <C-o> <C-o>zz
-
-" Remove the last search thus clearing the highlight
-" This clears the search register denoted by @/
-nnoremap <silent> <leader>4 :let @/=""<CR>
-
-" Don't automatically jump on search
-nnoremap * :keepjumps normal! mi*`i<CR>
-nnoremap # :keepjumps normal! mi#`i<CR>
-
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-" Close all the lists
-nnoremap <silent> <leader>q :call <SID>CloseLists()<CR>
-function! s:CloseLists()
-  lclose
-  cclose
-  pclose
-  silent! TagbarClose
-endfunction
-
-command! ClearWhitespace call s:ClearWhitespace()
-function! s:ClearWhitespace()
-  let l:line = line('.')
-  let l:column = col('.')
-  keepjumps silent! %s/\s\+$//e
-  call cursor(l:line, l:column)
-  call histdel('search', -1)
-endfunction
-
-function! s:ClearWhitespaceIfExpected()
-  if &filetype =~? 'markdown'
-    return
-  endif
-
-  call s:ClearWhitespace()
-endfunction
-
-" Unfuck my screen
-nnoremap U :syntax sync fromstart<CR>:redraw!<CR>
-
-" Running as diff
-if &diff
-  set modifiable
-  set noreadonly
-  if tabpagenr('$') == 1
-    nnoremap ZZ :wqall<CR>
-  endif
-else
-  " Jump to next/previous merge conflict marker
-  nnoremap <silent> ]c /\v^(\<\|\=\|\>){7}([^=].+)?$<CR>
-  nnoremap <silent> [c ?\v^(\<\|\=\|\>){7}([^=].+)\?$<CR>
-endif
-
-" Position resume
-function! s:PositionRecall()
-  if &filetype =~? 'gitcommit\|gitrebase'
-    return
-  endif
-
-  if line("'\"") > 0 && line("'\"") <= line('$')
-    execute "normal g`\"zz"
-  endif
-endfunction
-
-function! s:SetColorColumn()
-  if &textwidth == 0
-    " Set colorcolumn specifically to 80 unless textwidth is set
-    set colorcolumn=80
-  else
-    " Show a line past the text width
-    set colorcolumn=+1
-  endif
-endfunction
-
-" Window sizes
-augroup window_sizes
-  autocmd!
-
-  " Set the minimum window width for vertical splits
-  autocmd VimEnter * silent! set winwidth=80
-  autocmd VimEnter * silent! set winminwidth=20
-augroup END
-
-" Various filetype settings
-augroup ft_settings
-  autocmd!
-
-  " Comment string settings
-  if empty(&commentstring) | setlocal commentstring=#\ %s | endif
-  autocmd FileType c,cpp,go,objc,php setlocal commentstring=//\ %s
-
-  " Treat .ipas as .zip files
-  autocmd BufReadCmd *.ipa call zip#Browse(expand("<amatch>"))
-
-  " Save files on some focus lost events, like switching splits
-  autocmd BufLeave,FocusLost * silent! wall
-
-  " Don't auto insert a comment when using O/o for a newline
-  autocmd VimEnter,BufRead,FileType * set formatoptions-=o
-
-  " Set color column based on textwidth setting
-  autocmd FileType * call s:SetColorColumn()
-
-  " Return to the same position you left the file in
-  autocmd BufRead * call s:PositionRecall()
-
-  " Clear whitespace on save
-  autocmd BufWritePre * call s:ClearWhitespaceIfExpected()
-
-  autocmd CursorHold <buffer> checktime
-augroup END
-
-augroup cursorline
-  autocmd!
-  autocmd WinEnter * setlocal cursorline
-  autocmd WinLeave * setlocal nocursorline
-augroup END
-
-" ObjC curly brace error fix
-let g:c_no_curly_error = 1
-
-" https://github.com/thoughtbot/dotfiles/pull/471
-let g:is_posix = 1
-
-" ObjC curly brace error fix
-let g:c_no_curly_error = 1
-
-" clang_complete
-let g:clang_close_preview = 1
-let g:clang_complete_macros = 1
-let g:clang_complete_patterns = 1
-let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
-let g:clang_snippets = 1
-let g:clang_snippets_engine = 'ultisnips'
-let g:clang_use_library = 1
-let g:clang_auto_user_options = "compile_commands.json"
-let g:clang_make_default_keymappings = 0
-
-" Dash support
-let g:investigate_use_dash=1
-
 " Airline
 let g:airline#extensions#tabline#enabled = 1
-" ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
-let s:opam_share_dir = system("opam config var share")
-let s:opam_share_dir = substitute(s:opam_share_dir, '[\r\n]*$', '', '')
-
-let s:opam_configuration = {}
-
-function! OpamConfOcpIndent()
-  execute "set rtp^=" . s:opam_share_dir . "/ocp-indent/vim"
-endfunction
-let s:opam_configuration['ocp-indent'] = function('OpamConfOcpIndent')
-
-function! OpamConfOcpIndex()
-  execute "set rtp+=" . s:opam_share_dir . "/ocp-index/vim"
-endfunction
-let s:opam_configuration['ocp-index'] = function('OpamConfOcpIndex')
-
-function! OpamConfMerlin()
-  let l:dir = s:opam_share_dir . "/merlin/vim"
-  execute "set rtp+=" . l:dir
-endfunction
-let s:opam_configuration['merlin'] = function('OpamConfMerlin')
-
-let s:opam_packages = ["ocp-indent", "ocp-index", "merlin"]
-let s:opam_check_cmdline = ["opam list --installed --short --safe --color=never"] + s:opam_packages
-let s:opam_available_tools = split(system(join(s:opam_check_cmdline)))
-for tool in s:opam_packages
-  " Respect package order (merlin should be after ocp-index)
-  if count(s:opam_available_tools, tool) > 0
-    call s:opam_configuration[tool]()
-  endif
-endfor
-" ## end of OPAM user-setup addition for vim / base ## keep this line
