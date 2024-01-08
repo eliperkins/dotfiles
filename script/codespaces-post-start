@@ -8,14 +8,11 @@ then
 fi
 
 # Install some developer tools and setup Linux how I like it
-apt install -y \
+sudo apt-get install -y \
   exa grc ripgrep shellcheck locate zoxide bat \
   fd-find duf
 
 # Delta isn't on aptitude, so download and install it
 temp_dir=$(mktemp -d)
-wget https://github.com/dandavison/delta/releases/download/0.15.1/git-delta-musl_0.15.1_amd64.deb -o "$temp_dir/delta.deb"
-dpkg -i "$temp_dir/delta.deb"
-
-# Setup the database for locate
-nohup updatedb &
+wget https://github.com/dandavison/delta/releases/download/0.16.5/git-delta-musl_0.16.5_amd64.deb -o "$temp_dir/delta.deb"
+sudo dpkg -i "$temp_dir/delta.deb"
