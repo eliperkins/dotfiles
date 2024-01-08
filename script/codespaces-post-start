@@ -6,7 +6,7 @@ sudo chsh "$(id -un)" --shell "/usr/bin/zsh"
 
 # Install some developer tools and setup Linux how I like it
 sudo apt-get update && apt-get install -y \
-  exa grc ripgrep shellcheck locate zoxide bat \
+  exa grc ripgrep shellcheck zoxide bat \
   fd-find duf
 
 # Delta isn't on aptitude, so download and install it
