@@ -15,5 +15,3 @@ delta_version="0.16.5"
 delta_deb="git-delta-musl_${delta_version}_amd64.deb"
 curl -sLo "$temp_dir/$delta_deb" "https://github.com/dandavison/delta/releases/download/$delta_version/$delta_deb"
 sudo dpkg -i "$temp_dir/$delta_deb"
-
-git clone --depth 1 https://github.com/zsh-users/antigen.git ~/.zsh/antigen
