@@ -1,8 +1,12 @@
 source $HOME/.zsh/antigen/antigen.zsh
 
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundles <<EOBUNDLES
+    zsh-users/zsh-autosuggestions
+    zsh-users/zsh-completions
+    zsh-users/zsh-history-substring-search
+    zsh-users/zsh-syntax-highlighting
+    mafredri/zsh-async
+    seletskiy/zsh-fuzzy-search-and-edit
+EOBUNDLES
 
 antigen apply
