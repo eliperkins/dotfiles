@@ -7,7 +7,6 @@ sudo chsh "$(id -un)" --shell "/usr/bin/zsh"
 # Install some developer tools and setup Linux how I like it
 sudo apt-get update && apt-get install -y \
   bat \
-  duf \
   exa \
   fd-find \
   fzf \

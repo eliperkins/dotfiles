@@ -44,7 +44,6 @@ brew 'curl'
 brew 'dfu-util'
 brew 'docker', link: false
 brew 'dtc'
-brew 'duf'
 brew 'dust'
 brew 'exa'
 brew 'libtool'

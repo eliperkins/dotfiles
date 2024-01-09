@@ -14,7 +14,7 @@ if command -v lsd &> /dev/null; then
     alias ls='lsd -laF'
 elif command -v exa &> /dev/null; then
     alias ls='exa -laF'
-else 
+else
     alias ls='ls -la'
 fi
 
@@ -30,8 +30,8 @@ if command -v rg &> /dev/null; then
     alias grep='rg'
 fi
 
-if command -v duf &> /dev/null; then
-    alias du='duf'
+if command -v dust &> /dev/null; then
+    alias du='dust'
 fi
 
 # Archives
