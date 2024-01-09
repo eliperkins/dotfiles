@@ -10,6 +10,7 @@ sudo apt-get update && apt-get install -y \
   duf \
   exa \
   fd-find \
+  fzf \
   grc \
   neovim \
   ripgrep \
