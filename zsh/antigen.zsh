@@ -1,4 +1,5 @@
-source $HOME/.zsh/antigen/antigen.zsh
+# shellcheck source=/dev/null
+source "$HOME/.zsh/antigen/antigen.zsh"
 
 antigen bundles <<EOBUNDLES
     zsh-users/zsh-autosuggestions

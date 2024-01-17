@@ -1,1 +1,2 @@
-source $HOME/.asdf/asdf.sh
+# shellcheck source=/dev/null
+source "$HOME/.asdf/asdf.sh"

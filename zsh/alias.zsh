@@ -52,7 +52,7 @@ alias s='cd ~/src'
 # Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
-if test "$(uname -s)" = "Darwin"; then
+if [[ $OSTYPE == "darwin"* ]]; then
     alias chrome='open /Applications/Google\ Chrome.app/'
     alias chromex='open /Applications/Google\ Chrome.app/ --args --disable-web-security'
     alias jscrepl='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc'

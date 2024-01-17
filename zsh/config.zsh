@@ -45,13 +45,6 @@ setopt HIST_REDUCE_BLANKS
 # After !! previous command don't execute, allow editing
 setopt HIST_VERIFY
 
-# Add timestamps to history
-setopt EXTENDED_HISTORY
-
-# don't expand aliases _before_ completion has finished
-#   like: git comm-[tab]
-setopt complete_aliases
-
 # pushd for cd commands
 setopt AUTO_PUSHD
 setopt CDABLE_VARS
@@ -77,48 +70,3 @@ unsetopt LIST_BEEP
 
 # Warn before quitting with background jobs
 setopt CHECK_JOBS
-
-# Auto insert quotes on typed URLs
-autoload -U url-quote-magic
-zle -N self-insert url-quote-magic
-
-# Reduce the lag switching into Normal mode to 0.1s
-export KEYTIMEOUT=1
-
-# Show vim mode on right
-# http://dougblack.io/words/zsh-vi-mode.html
-function zle-line-init zle-keymap-select {
-  VIM_PROMPT="[% NORMAL]%"
-  # Apparently EPS1 is not a typo
-  RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
-  zle reset-prompt
-}
-
-zle -N zle-line-init
-zle -N zle-keymap-select
-
-# Force update of RPS1 immediately
-reset_rps1() {
-  RPS1=""
-}
-autoload -U add-zsh-hook
-add-zsh-hook precmd reset_rps1
-
-zle -N newtab
-
-bindkey '^[^[[D' backward-word
-bindkey '^[^[[C' forward-word
-bindkey '^[[5D' beginning-of-line
-bindkey '^[[5C' end-of-line
-bindkey '^[[3~' delete-char
-bindkey '^[^N' newtab
-bindkey '^?' backward-delete-char
-
-# for zsh-history-substring-search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-
-if test -f "$highlighting"
-then
-  source $highlighting
-fi

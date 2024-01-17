@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # dot
 #
@@ -23,22 +23,21 @@ displayUsageAndExit() {
 
 while test $# -gt 0; do
     case "$1" in
-    "-h" | "--help")
-        displayUsageAndExit
-        ;;
-    "-e" | "--edit")
-        exec "$EDITOR" "$dotfilesDirectory"
-        exit
-        ;;
-    *)
-        echo "Invalid option: $1"
-        displayUsageAndExit
-        ;;
+        "-h"|"--help")
+            displayUsageAndExit
+            ;;
+        "-e"|"--edit")
+            exec "$EDITOR" "$dotfilesDirectory"
+            exit
+            ;;
+        *)
+            echo "Invalid option: $1"
+            displayUsageAndExit
+            ;;
     esac
-    shift
 done
 
-if test "$CODESPACES"; 
+if test "$CODESPACES";
 then
     export ZSH=/workspaces/.codespaces/.persistedshare/dotfiles
 else

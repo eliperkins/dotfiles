@@ -1,7 +1,7 @@
 # to profile zsh launch time, uncomment this and `zprof` at the bottom
 # zmodload zsh/zprof
 
-if [[ $CODESPACES == "true" ]]; 
+if [[ $CODESPACES == "true" ]];
 then
   export ZSH=/workspaces/.codespaces/.persistedshare/dotfiles
   export PROJECTS=/workspaces
@@ -43,7 +43,7 @@ done
 fpath+=~/.zfunc
 
 autoload -Uz compinit
-for dump in ~/.zcompdump(N.mh+12); do
+for dump in ~/.zcompdump(N.mh+24); do
   compinit
 done
 compinit -C
@@ -65,7 +65,6 @@ export PATH="$HOME/src/github/awssume/bin:$PATH"
 export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 
-# zprof
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# zprof

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+shopt -s nullglob dotglob
+shellcheck -x -s bash -W 100 ./**/*.{sh,zsh}
