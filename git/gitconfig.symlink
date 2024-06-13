@@ -1,13 +1,15 @@
 [user]
-	name = Eli Perkins
-	email = eli.j.perkins@gmail.com
+  name = Eli Perkins
+  email = eli.j.perkins@gmail.com
 [github]
   user = eliperkins
 [core]
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
   editor = nvim
   whitespace = trailing-space,space-before-tab
   pager = delta
+  untrackedcache = true
+  fsmonitor = true
 [delta]
   plus-color = "#012800"
   minus-color = "#340001"
@@ -15,7 +17,7 @@
 [interactive]
   diffFilter = delta --color-only
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [alias]
   a = add
   ap = add -p
@@ -26,21 +28,21 @@
   ctags = !.git/hooks/ctags
   dt = difftool
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-	pf = push --force-with-lease
+  pf = push --force-with-lease
   s = status -sb
   up = pull --rebase
-	recent = branch --sort=-committerdate --format='%(refname:short) (%(color:green)%(creatordate:relative))'
-	recently = !$ZSH/git/git-recently.sh
+  recent = branch --sort=-committerdate --format='%(refname:short) (%(color:green)%(creatordate:relative))'
+  recently = !$ZSH/git/git-recently.sh
 [color]
   diff = auto
   status = auto
   branch = auto
-	ui = auto
+  ui = auto
 [apply]
   whitespace = nowarn
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
 [help]
   autocorrect = 1
 [fetch]
@@ -49,35 +51,37 @@
   enabled = true
 [rebase]
   autosquash = true
-	autostash = true
+  autostash = true
 [commit]
-	gpgsign = true
+  gpgsign = true
 [pull]
-	autostash = true
+  autostash = true
   rebase = true
-	default = current
+  default = current
 [format]
   pretty = %C(yellow)%h%Cblue%d%Creset %s - %C(white)%an %Cgreen(%cr)%Creset
 [push]
-	default = current
-	autoSetupRemote = true
+  default = current
+  autoSetupRemote = true
 [protocol]
-	version = 2
+  version = 2
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [diff "sqlite3"]
-	textconv = sqlite3 $1 .dump
+  textconv = sqlite3 $1 .dump
 [includeIf "gitdir:~/src/"]
   path = ~/.gitconfig.macos
 [includeIf "gitdir:/workspaces/"]
   path = ~/.gitconfig.codespaces
 [merge "npm-merge-driver"]
-	name = automatically merge npm lockfiles
-	driver = npx npm-merge-driver merge %A %O %B %P
+  name = automatically merge npm lockfiles
+  driver = npx npm-merge-driver merge %A %O %B %P
 [advice]
-	skippedCherryPicks = false
+  skippedCherryPicks = false
 [pile]
-	cleanupRemoteOnSubmitFailure = false
+  cleanupRemoteOnSubmitFailure = false
+[pack]
+  allowPackReuse = multi
