@@ -5,8 +5,6 @@ call plug#begin()
 
 " My Bundles here:
 Plug 'airblade/vim-gitgutter'
-Plug 'b4winckler/vim-objc'
-Plug 'Blackrush/vim-gocode'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim'
@@ -14,56 +12,33 @@ Plug 'critiqjo/lldb.nvim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'danro/rename.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'ervandew/supertab'
-Plug 'godlygeek/tabular'
-Plug 'jnwhiteh/vim-golang'
 Plug 'justmao945/vim-clang'
-Plug 'Keith/investigate.vim'
-Plug 'Keith/specta.vim'
 Plug 'keith/swift.vim'
-Plug 'mattn/gist-vim'
-Plug 'mattn/webapi-vim'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'raichoo/haskell-vim'
-Plug 'Raimondi/delimitMate'
-Plug 'rking/ag.vim'
-Plug 'Shougo/vimshell'
-Plug 'Shougo/deoplete.nvim'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'sjl/vitality.vim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-cucumber'
-Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
-Plug 'tpope/vim-liquid'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/camelcasemotion'
-Plug 'vim-scripts/ctags.vim'
-Plug 'vim-scripts/tComment'
 Plug 'w0rp/ale'
-Plug 'othree/es.next.syntax.vim'
-Plug 'mxw/vim-jsx'
-Plug 'othree/yajs.vim'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'JulesWang/css.vim'
 Plug 'neomake/neomake'
 Plug 'github/copilot.vim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'nvim-treesitter/nvim-treesitter'
+
+" xcodebuild + deps
+Plug 'wojciech-kulik/xcodebuild.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'stevearc/oil.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()
 
-let g:deoplete#enable_at_startup = 1
-
-let g:python3_host_prog = '/opt/homebrew/bin/python3'
+let g:python3_host_prog = '/usr/local/bin/pip3'
 
 function! StrTrim(txt)
   return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
@@ -77,10 +52,6 @@ let g:loaded_perl_provider = 0
 let base16colorspace=256
 set termguicolors
 colorscheme base16-ocean
-
-" Use Vim settings, rather then Vi settings. This setting must be as early as
-" possible, as it has side effects.
-set nocompatible
 
 " I - Disable the startup message
 " a - Avoid pressing enter after saves
