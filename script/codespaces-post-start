@@ -16,6 +16,12 @@ sudo apt-get update && sudo apt-get install -y \
   shellcheck \
   zoxide
 
+# linux workaround for bat: https://github.com/sharkdp/bat?tab=readme-ov-file#on-ubuntu-using-apt
+if [ -x "$(command -v batcat)" ]; then
+  mkdir -p ~/.local/bin
+  ln -s /usr/bin/batcat ~/.local/bin/bat
+fi
+
 # Delta isn't on aptitude, so download and install it
 temp_dir=$(mktemp -d)
 delta_version="0.16.5"
