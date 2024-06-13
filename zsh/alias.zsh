@@ -19,7 +19,7 @@ else
 fi
 
 if command -v bat &> /dev/null; then
-    alias cat='bat'
+    alias cat="bat --theme='Sublime Snazzy'"
 fi
 
 if command -v fd &> /dev/null; then
