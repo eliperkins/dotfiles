@@ -1,0 +1,36 @@
+# zmodload zsh/zprof
+
+if test "$CODESPACES";
+then
+    export ZSH=/workspaces/.codespaces/.persistedshare/dotfiles
+else
+    export ZSH=$HOME/.dotfiles
+fi
+
+# Homebrew flags
+export HOMEBREW_USE_CLANG
+
+# Stash your environment variables in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+
+# all of our zsh files
+typeset -U config_files
+config_files=($ZSH/**/*.zsh)
+
+# load the path files
+for file in ${(M)config_files:#*/(_)path.zsh}
+do
+  # echo "(zshenv) loading $file"
+  source $file
+done
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+. "$HOME/.cargo/env"
