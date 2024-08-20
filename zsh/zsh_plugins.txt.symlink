@@ -1,0 +1,5 @@
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+zsh-users/zsh-history-substring-search kind:defer
+zsh-users/zsh-syntax-highlighting kind:defer
+reegnz/jq-zsh-plugin
