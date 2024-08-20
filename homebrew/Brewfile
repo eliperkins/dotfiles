@@ -80,8 +80,6 @@ brew 'ruby-build'
 brew 'redis', restart_service: true
 brew 'ripgrep'
 brew 'rlwrap'
-brew 'rust'
-brew 'rustup-init'
 brew 'shellcheck'
 brew 'sourcekitten'
 brew 'subversion'
