@@ -7,14 +7,12 @@ sudo chsh "$(id -un)" --shell "/usr/bin/zsh"
 # Install some developer tools and setup Linux how I like it
 sudo apt-get update && sudo apt-get install -y \
   bat \
-  exa \
   fd-find \
   fzf \
   grc \
   neovim \
   ripgrep \
-  shellcheck \
-  zoxide
+  shellcheck
 
 # linux workaround for bat: https://github.com/sharkdp/bat?tab=readme-ov-file#on-ubuntu-using-apt
 if [ -x "$(command -v batcat)" ]; then
@@ -28,3 +26,9 @@ delta_version="0.16.5"
 delta_deb="git-delta-musl_${delta_version}_amd64.deb"
 curl -sLo "$temp_dir/$delta_deb" "https://github.com/dandavison/delta/releases/download/$delta_version/$delta_deb"
 sudo dpkg -i "$temp_dir/$delta_deb"
+
+# install tools via cargo if cargo is installed
+if [ -x "$(command -v cargo)" ]; then
+  cargo install lsd
+  cargo install zoxide
+fi
