@@ -20,15 +20,9 @@ if [ -x "$(command -v batcat)" ]; then
   ln -s /usr/bin/batcat ~/.local/bin/bat
 fi
 
-# Delta isn't on aptitude, so download and install it
-temp_dir=$(mktemp -d)
-delta_version="0.16.5"
-delta_deb="git-delta-musl_${delta_version}_amd64.deb"
-curl -sLo "$temp_dir/$delta_deb" "https://github.com/dandavison/delta/releases/download/$delta_version/$delta_deb"
-sudo dpkg -i "$temp_dir/$delta_deb"
-
 # install tools via cargo if cargo is installed
 if [ -x "$(command -v cargo)" ]; then
-  cargo install lsd
-  cargo install zoxide
+  cargo install lsd \
+    zoxide \
+    git-delta
 fi
