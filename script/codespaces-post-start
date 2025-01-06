@@ -21,9 +21,10 @@ if [ -x "$(command -v batcat)" ]; then
   ln -s /usr/bin/batcat ~/.local/bin/bat
 fi
 
-# install tools via cargo if cargo is installed
-if [ -x "$(command -v cargo)" ]; then
-  cargo install lsd \
-    zoxide \
-    git-delta
-fi
+# install packages via nix
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
+. ~/.nix-profile/etc/profile.d/nix.sh
+
+nix-env -iA nixpkgs.delta \
+    nixpkgs.lsd \
+    nixpkgs.zoxide
