@@ -21,9 +21,11 @@ if [ -x "$(command -v batcat)" ]; then
   ln -s /usr/bin/batcat ~/.local/bin/bat
 fi
 
-# install packages via nix
-sh <(curl -L https://nixos.org/nix/install) --no-daemon
-. ~/.nix-profile/etc/profile.d/nix.sh
+# install nix if not installed
+if [ ! -x "$(command -v nix)" ]; then
+  sh <(curl -L https://nixos.org/nix/install) --no-daemon
+  . ~/.nix-profile/etc/profile.d/nix.sh
+fi
 
 nix-env -iA nixpkgs.delta \
     nixpkgs.lsd \
