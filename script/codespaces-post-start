@@ -20,6 +20,10 @@ if [ ! -L ~/.local/bin/bat ] && [ -x "$(command -v batcat)" ]; then
   ln -s /usr/bin/batcat ~/.local/bin/bat
 fi
 
-nix-env -iA nixpkgs.delta \
+# if nix is installed, source the nix profile and install the packages
+if [ -f ~/.nix-profile/etc/profile.d/nix.sh ]; then
+  . ~/.nix-profile/etc/profile.d/nix.sh
+  nix-env -iA nixpkgs.delta \
     nixpkgs.lsd \
     nixpkgs.zoxide
+fi
