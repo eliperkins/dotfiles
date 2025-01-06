@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Run by github/github codespaces after starting
 
 # Always want to use ZSH as my default shell (e.g. for SSH)
@@ -12,11 +12,10 @@ sudo apt-get update && sudo apt-get install -y \
   grc \
   neovim \
   ripgrep \
-  shellcheck \
-  rustc
+  shellcheck
 
 # linux workaround for bat: https://github.com/sharkdp/bat?tab=readme-ov-file#on-ubuntu-using-apt
-if [ -x "$(command -v batcat)" ]; then
+if [ ! -L ~/.local/bin/bat ] && [ -x "$(command -v batcat)" ]; then
   mkdir -p ~/.local/bin
   ln -s /usr/bin/batcat ~/.local/bin/bat
 fi
