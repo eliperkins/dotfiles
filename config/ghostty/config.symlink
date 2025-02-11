@@ -1,0 +1,22 @@
+theme = Snazzy Soft
+font-family = Monaspace Neon Var
+font-size = 13
+font-variation = wght=400
+font-variation-bold = wght=600
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
+quick-terminal-screen = macos-menu-bar
+quick-terminal-animation-duration = 0.15
+background-opacity = 0.8
+background-blur-radius = 20
+resize-overlay-position = bottom-right
+shell-integration = zsh
+auto-update = download
+auto-update-channel = tip
+cursor-style = block
+unfocused-split-opacity = 0.85
+unfocused-split-fill = 000000
+
+keybind = global:ctrl+escape=toggle_quick_terminal
+keybind = super+f=write_screen_file:open

@@ -57,3 +57,6 @@ if [[ $OSTYPE == "darwin"* ]]; then
     alias chromex='open /Applications/Google\ Chrome.app/ --args --disable-web-security'
     alias jscrepl='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc'
 fi
+
+alias vscode="/usr/local/bin/code"
+alias code="zed"
