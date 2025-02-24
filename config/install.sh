@@ -5,7 +5,6 @@
 for file in $(find config -type f -name "*.symlink"); do
     dir=$(dirname "$file")
     name=$(basename "$file" .symlink)
-    mkdir -p "$HOME/.config/$dir"
-    echo "Linking $(pwd)/$file to $HOME/.$dir/$name"
+    mkdir -p "$HOME/.$dir"
     ln -sf "$(pwd)/$file" "$HOME/.$dir/$name"
 done

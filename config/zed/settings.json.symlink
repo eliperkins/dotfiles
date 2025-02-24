@@ -1,0 +1,36 @@
+{
+  "buffer_font_family": "Dank Mono",
+  "buffer_font_size": 16,
+  "font_family": "Dank Mono",
+  "terminal": {
+    "font_size": 14,
+    "font_family": "Dank Mono"
+  },
+  "theme": "Night Owl Dark",
+  "scrollbar": {
+    "show": "auto"
+  },
+  "experimental.theme_overrides": {
+    "scrollbar.track.background": "#0000",
+    "scrollbar.track.border": "#0000",
+    "terminal.background": "#282a36",
+    "terminal.foreground": "#eff0eb",
+    "terminal.ansi.black": "#2f3b54",
+    "terminal.ansi.bright_black": "#2f3b54",
+    "terminal.ansi.red": "#ff5c57",
+    "terminal.ansi.bright_red": "#ff5c57",
+    "terminal.ansi.green": "#5af78e",
+    "terminal.ansi.bright_green": "#5af78e",
+    "terminal.ansi.yellow": "#f3f99d",
+    "terminal.ansi.bright_yellow": "#f3f99d",
+    "terminal.ansi.blue": "#57c7ff",
+    "terminal.ansi.bright_blue": "#57c7ff",
+    "terminal.ansi.magenta": "#ff6ac1",
+    "terminal.ansi.bright_magenta": "#ff6ac1",
+    "terminal.ansi.cyan": "#9aedfe",
+    "terminal.ansi.bright_cyan": "#9aedfe",
+    "terminal.ansi.white": "#f1f1f0",
+    "terminal.ansi.bright_white": "#f1f1f0"
+  },
+  "file_scan_exclusions": ["node_modules", ".git/**"]
+}
