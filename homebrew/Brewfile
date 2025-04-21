@@ -1,182 +1,237 @@
-# Taps
-tap 'facebook/fb'
-tap 'homebrew/services'
-tap 'kylef/formulae'
-tap 'majd/repo'
-tap 'michaeleisel/zld'
-tap 'microsoft/git'
-tap 'neovim/neovim'
-tap 'qmk/qmk'
-tap 'robotsandpencils/made'
-
-# Brews
-brew 'adr-tools'
-brew 'apktool'
-brew 'aria2'
-brew 'automake'
-brew 'readline'
-brew 'sqlite'
-brew 'xz'
-brew 'awscli'
-brew 'bat'
-brew 'blueutil'
-brew 'bzip2'
-brew 'gettext'
-brew 'glib'
-brew 'pkg-config'
-brew 'ccache'
-brew 'chisel'
-brew 'cloc'
-brew 'cmake'
-brew 'coreutils'
-brew 'ctop'
-brew 'jemalloc'
-brew 'curl'
-brew 'dfu-util'
-brew 'dust'
-brew 'libtool'
-brew 'ffmpeg'
-brew 'fzf'
-brew 'gh'
-brew 'git'
-brew 'git-delta'
-brew 'git-lfs'
-brew 'go'
-brew 'libgpg-error'
-brew 'gnupg'
-brew 'librsvg'
-brew 'graphviz'
-brew 'protobuf'
-brew 'grpc'
-brew 'hivemind'
-brew 'htop'
-brew 'libheif'
-brew 'imagemagick'
-brew 'libuv'
-brew 'jq'
-brew 'launchdns', restart_service: true
-brew 'lcov'
-brew 'libgit2'
-brew 'lsd'
-brew 'mas'
-brew 'md5sha1sum'
-brew 'ninja'
-brew 'mint'
-brew 'mosh'
-brew 'neovim'
-brew 'nginx', restart_service: true
-brew 'ninja'
-brew 'opam'
-brew 'openvpn'
-brew 'overmind'
-brew 'pandoc'
-brew 'parallel'
-brew 'pinentry-mac'
-brew 'proselint'
-brew 'ruby-build'
-brew 'redis', restart_service: true
-brew 'ripgrep'
-brew 'rlwrap'
-brew 'shellcheck'
-brew 'sourcekitten'
-brew 'subversion'
-brew 'swiftlint'
-brew 'telnet'
-brew 'the_silver_searcher'
-brew 'tig'
-brew 'tree'
-brew 'vale'
-brew 'wget'
-brew 'xcodegen'
-brew 'z'
-brew 'zlib'
-brew 'zoxide'
-brew 'zsh'
-
-brew 'crowdin/crowdin/crowdin@3'
-brew 'facebook/fb/idb-companion'
-brew 'lyft/formulae/set-simulator-location'
-brew 'robotsandpencils/made/xcodes'
-
-# Casks
-cask '1password@beta'
-cask 'amethyst'
-cask 'amie'
-cask 'balance-lock'
-cask 'bettertouchtool'
-cask 'elgato-capture-device-utility'
-cask 'elgato-control-center'
-cask 'figma@beta'
-cask 'fork'
-cask 'graphql-playground'
-cask 'ipatool'
-cask 'iterm2'
-cask 'iterm2'
-cask 'jordanbaird-ice'
-cask 'kaleidoscope'
-cask 'kitty'
-cask 'lunar'
-cask 'mimestream'
-cask 'microsoft-teams'
-cask 'monodraw'
-cask 'muzzle'
-cask 'obsidian'
-cask 'oversight'
-cask 'raycast'
-cask 'rescuetime'
-cask 'secretive'
-cask 'sf-symbols'
-cask 'sim-genie'
-cask 'slack@beta'
-cask 'spotify'
-cask 'tailscale'
-cask 'toolreleases'
-cask 'visual-studio-code'
-cask 'wwdc'
-cask 'xcodes'
-cask 'zed'
-cask 'zoom'
-
-# Fonts
-cask 'font-fira-code', args: { appdir: '/Applications' }
-cask 'font-fira-mono', args: { appdir: '/Applications' }
-cask 'font-fira-mono-for-powerline', args: { appdir: '/Applications' }
-cask 'font-hack-nerd-font', args: { appdir: '/Applications' }
-cask 'font-hasklig', args: { appdir: '/Applications' }
-cask 'font-inconsolata-dz-for-powerline', args: { appdir: '/Applications' }
-cask 'font-inconsolata-for-powerline', args: { appdir: '/Applications' }
-cask 'font-inconsolata-g-for-powerline', args: { appdir: '/Applications' }
-cask 'font-iosevka', args: { appdir: '/Applications' }
-cask 'font-meslo-for-powerline', args: { appdir: '/Applications' }
-cask 'font-meslo-lg', args: { appdir: '/Applications' }
-cask 'font-montserrat', args: { appdir: '/Applications' }
-cask 'font-open-sans', args: { appdir: '/Applications' }
-cask 'font-source-code-pro', args: { appdir: '/Applications' }
-
-# App Store apps
-mas '1Password for Safari', id: 1_569_813_296
-mas 'Apple Configurator 2', id: 1_037_126_344
-mas 'Buildwatch', id: 1_523_347_474
-mas 'Calcbot', id: 931_657_367
-mas 'Contrast', id: 1_254_981_365
-mas 'Dato', id: 1_470_584_107
-mas 'Deckset', id: 847_496_013
-mas 'Deliveries', id: 924_726_344
-mas 'Developer', id: 640_199_958
-mas 'Disk Speed Test', id: 425_264_550
-mas 'Gifski', id: 1_351_639_930
-mas 'iMovie', id: 408_981_434
-mas 'Ivory', id: 6_444_602_274
-mas 'Keynote', id: 409_183_694
-mas 'Microsoft Excel', id: 462_058_435
-mas 'Microsoft Remote Desktop', id: 1_295_203_466
-mas 'Numbers', id: 409_203_825
-mas 'Okta Extension App', id: 1_439_967_473
-mas 'Pages', id: 409_201_541
-mas 'Pastebot', id: 1179623856
-mas 'Playgrounds', id: 1_496_833_156
-mas 'Redacted', id: 984_968_384
-mas 'TestFlight', id: 899_247_664
-mas 'The Unarchiver', id: 425_424_353
-mas 'Things', id: 904_280_696
-mas 'Tweetbot', id: 1_384_080_005
+tap "azure/azd"
+tap "azure/functions"
+tap "crowdin/crowdin"
+tap "kylef/formulae"
+tap "majd/repo"
+tap "michaeleisel/zld"
+tap "microsoft/git"
+tap "neovim/neovim"
+tap "powershell/tap"
+tap "qmk/qmk"
+brew "adr-tools"
+brew "xz"
+brew "gettext"
+brew "glib"
+brew "apktool"
+brew "readline"
+brew "sqlite"
+brew "aria2"
+brew "automake"
+brew "awscli"
+brew "azure-cli"
+brew "bash"
+brew "libgit2"
+brew "bat"
+brew "blueutil"
+brew "bzip2"
+brew "ccache"
+brew "chisel"
+brew "cloc"
+brew "cmake"
+brew "coreutils"
+brew "ctop"
+brew "curl"
+brew "dfu-util"
+brew "docker"
+brew "dust"
+brew "ffmpeg"
+brew "fzf"
+brew "gh"
+brew "git"
+brew "git-delta"
+brew "git-lfs"
+brew "libgpg-error"
+brew "gnupg"
+brew "go"
+brew "pkgconf"
+brew "librsvg"
+brew "libtool"
+brew "graphviz"
+brew "protobuf"
+brew "grpc"
+brew "gtk+3"
+brew "hidapi"
+brew "hivemind"
+brew "htop"
+brew "libheif"
+brew "imagemagick"
+brew "jemalloc"
+brew "jq"
+brew "lcov"
+brew "libuv"
+brew "lsd"
+brew "mas"
+brew "md5sha1sum"
+brew "mint"
+brew "mosh"
+brew "neovim"
+brew "nginx", restart_service: :changed
+brew "ninja"
+brew "opam"
+brew "openvpn"
+brew "overmind"
+brew "pandoc"
+brew "parallel"
+brew "pinentry-mac"
+brew "pipx"
+brew "pngcrush"
+brew "pngquant"
+brew "proselint"
+brew "pygobject3"
+brew "redis", restart_service: :changed
+brew "ripgrep"
+brew "rlwrap"
+brew "ruby-build"
+brew "rust"
+brew "shellcheck"
+brew "sourcekitten"
+brew "subversion"
+brew "swiftlint"
+brew "telnet"
+brew "the_silver_searcher"
+brew "tig"
+brew "tree"
+brew "vale"
+brew "websocat"
+brew "wget"
+brew "xcodegen"
+brew "xcodes"
+brew "z"
+brew "zlib"
+brew "zoxide"
+brew "zsh"
+brew "azure/azd/azd"
+brew "azure/functions/azure-functions-core-tools@4"
+brew "crowdin/crowdin/crowdin@3"
+brew "powershell/tap/powershell"
+cask "1password-cli@beta"
+cask "1password@beta"
+cask "amethyst"
+cask "amie"
+cask "balance-lock"
+cask "bettertouchtool"
+cask "elgato-capture-device-utility"
+cask "elgato-control-center"
+cask "eloston-chromium", args: { appdir: "/Applications" }
+cask "figma@beta"
+cask "font-fira-code", args: { appdir: "/Applications" }
+cask "font-fira-mono", args: { appdir: "/Applications" }
+cask "font-fira-mono-for-powerline", args: { appdir: "/Applications" }
+cask "font-hack-nerd-font", args: { appdir: "/Applications" }
+cask "font-hasklig", args: { appdir: "/Applications" }
+cask "font-inconsolata-dz-for-powerline", args: { appdir: "/Applications" }
+cask "font-inconsolata-for-powerline", args: { appdir: "/Applications" }
+cask "font-inconsolata-g-for-powerline", args: { appdir: "/Applications" }
+cask "font-iosevka", args: { appdir: "/Applications" }
+cask "font-meslo-for-powerline", args: { appdir: "/Applications" }
+cask "font-meslo-lg", args: { appdir: "/Applications" }
+cask "font-montserrat", args: { appdir: "/Applications" }
+cask "font-open-sans", args: { appdir: "/Applications" }
+cask "font-source-code-pro", args: { appdir: "/Applications" }
+cask "fork"
+cask "ghostty"
+cask "git-credential-manager"
+cask "ipatool"
+cask "iterm2"
+cask "jordanbaird-ice"
+cask "kaleidoscope"
+cask "kitty"
+cask "lunar"
+cask "microsoft-auto-update"
+cask "microsoft-teams"
+cask "mimestream"
+cask "monodraw"
+cask "muzzle"
+cask "obsidian"
+cask "orbstack"
+cask "oversight"
+cask "raycast"
+cask "rescuetime"
+cask "secretive"
+cask "sf-symbols"
+cask "sim-genie"
+cask "slack@beta"
+cask "spotify"
+cask "tailscale"
+cask "toolreleases"
+cask "visual-studio-code"
+cask "vnc-viewer"
+cask "wwdc"
+cask "xcodes"
+cask "yubico-yubikey-manager"
+cask "zed"
+cask "zoom"
+mas "1Blocker", id: 1365531024
+mas "1Password for Safari", id: 0
+mas "Apple Configurator", id: 1037126344
+mas "Azure VPN Client", id: 1553936137
+mas "Blackmagic Disk Speed Test", id: 425264550
+mas "Buildwatch", id: 1523347474
+mas "Calcbot", id: 931657367
+mas "Chimeful", id: 0
+mas "Dato", id: 1470584107
+mas "Developer", id: 640199958
+mas "Fantastical", id: 975937182
+mas "Flighty", id: 1358823008
+mas "GarageBand", id: 682658836
+mas "Gifski", id: 1351639930
+mas "Helm", id: 0
+mas "HyperList", id: 0
+mas "iMovie", id: 408981434
+mas "Ivory", id: 6444602274
+mas "Keynote", id: 409183694
+mas "Microsoft Excel", id: 462058435
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Pastebot", id: 1179623856
+mas "Sage", id: 0
+mas "Screens 5", id: 1663047912
+mas "Swift Playground", id: 1496833156
+mas "TestFlight", id: 899247664
+mas "The Unarchiver", id: 425424353
+mas "Things", id: 904280696
+mas "Windows App", id: 1295203466
+vscode "akamud.vscode-theme-onelight"
+vscode "apollographql.vscode-apollo"
+vscode "bierner.markdown-mermaid"
+vscode "castwide.solargraph"
+vscode "dbaeumer.vscode-eslint"
+vscode "docker.docker"
+vscode "dotjoshjohnson.xml"
+vscode "eamodio.gitlens"
+vscode "editorconfig.editorconfig"
+vscode "esbenp.prettier-vscode"
+vscode "foam.foam-vscode"
+vscode "github.codespaces"
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "graphql.vscode-graphql"
+vscode "graphql.vscode-graphql-syntax"
+vscode "jnbt.vscode-rufo"
+vscode "kaiwood.endwise"
+vscode "koichisasada.vscode-rdbg"
+vscode "kortina.vscode-markdown-notes"
+vscode "llvm-vs-code-extensions.lldb-dap"
+vscode "manuelpuyol.erb-linter"
+vscode "ms-azuretools.vscode-bicep"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-dotnettools.csdevkit"
+vscode "ms-dotnettools.csharp"
+vscode "ms-dotnettools.vscode-dotnet-runtime"
+vscode "ms-dotnettools.vscodeintellicode-csharp"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode.hexeditor"
+vscode "ms-vscode.powershell"
+vscode "philipbe.theme-gray-matter"
+vscode "sdras.night-owl"
+vscode "stylelint.vscode-stylelint"
+vscode "swiftlang.swift-vscode"
+vscode "syler.sass-indented"
+vscode "tchayen.markdown-links"
+vscode "vadimcn.vscode-lldb"
+vscode "vknabel.vscode-apple-swift-format"
+vscode "wheredoesyourmindgo.nushu-vscode-theme"
+vscode "will-wow.vscode-alternate-file"
+vscode "yzhang.markdown-all-in-one"
+vscode "zhuangtongfa.material-theme"
+vscode "zxh404.vscode-proto3"

@@ -12,3 +12,5 @@ fi
 # R - output colors correctly
 # X - Don't send clear screen signal
 export LESS="ij.5KMRX"
+
+source <(fzf --zsh)

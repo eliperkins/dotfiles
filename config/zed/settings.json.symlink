@@ -1,4 +1,24 @@
 {
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-3.7-sonnet-thought"
+    },
+    "version": "2"
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "languages": {
+    "Markdown": {
+      "soft_wrap": "editor_width"
+    },
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    }
+  },
   "buffer_font_family": "Dank Mono",
   "buffer_font_size": 16,
   "font_family": "Dank Mono",

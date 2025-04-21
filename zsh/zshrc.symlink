@@ -44,4 +44,3 @@ autoload -Uz promptinit
 promptinit
 
 # zprof
-eval "$(/Users/eliperkins/.local/bin/mise activate zsh)"

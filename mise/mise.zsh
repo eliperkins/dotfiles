@@ -1,3 +1,3 @@
 if command -v mise &> /dev/null; then
-  source <(mise activate zsh)
+  eval "$(mise activate zsh)"
 fi

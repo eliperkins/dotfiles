@@ -8,6 +8,7 @@ alias ,,,='cd ../..'
 # Vim
 alias v="nvim"
 alias vv="nvim ."
+alias vim="nvim"
 
 # Modern Unix https://github.com/ibraheemdev/modern-unix
 if command -v lsd &> /dev/null; then

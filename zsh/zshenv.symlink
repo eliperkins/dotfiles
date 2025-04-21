@@ -18,6 +18,8 @@ then
   source ~/.localrc
 fi
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # all of our zsh files
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
@@ -32,8 +34,5 @@ do
   source $file
 done
 
-export PATH="$HOME/.yarn/bin:$PATH"
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-. "$HOME/.cargo/env"
+# load homebrew path last to override any other paths
+source $ZSH/homebrew/_path.zsh
