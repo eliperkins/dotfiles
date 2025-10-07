@@ -1,5 +1,3 @@
-tap "azure/azd"
-tap "azure/functions"
 tap "crowdin/crowdin"
 tap "kylef/formulae"
 tap "majd/repo"
@@ -18,7 +16,6 @@ brew "sqlite"
 brew "aria2"
 brew "automake"
 brew "awscli"
-brew "azure-cli"
 brew "bash"
 brew "libgit2"
 brew "bat"
@@ -62,7 +59,6 @@ brew "libuv"
 brew "lsd"
 brew "mas"
 brew "md5sha1sum"
-brew "mint"
 brew "mosh"
 brew "neovim"
 brew "nginx", restart_service: :changed
@@ -100,14 +96,11 @@ brew "z"
 brew "zlib"
 brew "zoxide"
 brew "zsh"
-brew "azure/azd/azd"
-brew "azure/functions/azure-functions-core-tools@4"
 brew "crowdin/crowdin/crowdin@3"
 brew "powershell/tap/powershell"
 cask "1password-cli@beta"
 cask "1password@beta"
 cask "amethyst"
-cask "amie"
 cask "balance-lock"
 cask "bettertouchtool"
 cask "elgato-capture-device-utility"
@@ -137,8 +130,6 @@ cask "jordanbaird-ice"
 cask "kaleidoscope"
 cask "kitty"
 cask "lunar"
-cask "microsoft-auto-update"
-cask "microsoft-teams"
 cask "mimestream"
 cask "monodraw"
 cask "muzzle"
@@ -164,7 +155,6 @@ cask "zoom"
 mas "1Blocker", id: 1365531024
 mas "1Password for Safari", id: 0
 mas "Apple Configurator", id: 1037126344
-mas "Azure VPN Client", id: 1553936137
 mas "Blackmagic Disk Speed Test", id: 425264550
 mas "Buildwatch", id: 1523347474
 mas "Calcbot", id: 931657367
@@ -173,14 +163,12 @@ mas "Dato", id: 1470584107
 mas "Developer", id: 640199958
 mas "Fantastical", id: 975937182
 mas "Flighty", id: 1358823008
-mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
 mas "Helm", id: 0
 mas "HyperList", id: 0
 mas "iMovie", id: 408981434
 mas "Ivory", id: 6444602274
 mas "Keynote", id: 409183694
-mas "Microsoft Excel", id: 462058435
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pastebot", id: 1179623856

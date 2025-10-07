@@ -44,3 +44,5 @@ autoload -Uz promptinit
 promptinit
 
 # zprof
+
+export PATH="$PATH:$HOME/.local/bin"

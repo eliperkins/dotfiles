@@ -1,13 +1,26 @@
 {
-  "assistant": {
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-3.7-sonnet-thought"
-    },
-    "version": "2"
-  },
   "features": {
-    "edit_prediction_provider": "copilot"
+    // "edit_prediction_provider": "zed"
+  },
+  "context_servers": {
+    "mcp-server-context7": {
+      "source": "extension",
+      "settings": {
+        "default_minimum_tokens": "10000"
+      }
+    }
+  },
+  "agent": {
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
+    "default_model": {
+      "provider": "lmstudio",
+      "model": "gpt-oss-120b"
+    },
+    "inline_assistant_model": {
+      "provider": "lmstudio",
+      "model": "devstral-small-2505-mlx"
+    }
   },
   "languages": {
     "Markdown": {
@@ -17,11 +30,21 @@
       "code_actions_on_format": {
         "source.fixAll.eslint": true
       }
+    },
+    "Swift": {
+      "language_servers": ["sourcekit-lsp"],
+      "formatter": "language_server",
+      "format_on_save": "on",
+      "tab_size": 2
+    },
+    "GraphQL": {
+      "tab_size": 2,
+      "formatter": "language_server",
+      "format_on_save": "on"
     }
   },
   "buffer_font_family": "Dank Mono",
   "buffer_font_size": 16,
-  "font_family": "Dank Mono",
   "terminal": {
     "font_size": 14,
     "font_family": "Dank Mono"
@@ -33,7 +56,6 @@
   "experimental.theme_overrides": {
     "scrollbar.track.background": "#0000",
     "scrollbar.track.border": "#0000",
-    "terminal.background": "#282a36",
     "terminal.foreground": "#eff0eb",
     "terminal.ansi.black": "#2f3b54",
     "terminal.ansi.bright_black": "#2f3b54",
@@ -52,5 +74,19 @@
     "terminal.ansi.white": "#f1f1f0",
     "terminal.ansi.bright_white": "#f1f1f0"
   },
-  "file_scan_exclusions": ["node_modules", ".git/**"]
+  "file_scan_exclusions": ["node_modules", ".git/**"],
+  "auto_install_extensions": {
+    "dockerfile": true,
+    "git-firefly": true,
+    "graphql": true,
+    "html": true,
+    "make": true,
+    "night-owlz": true,
+    "ruby": true,
+    "sql": true,
+    "swift": true,
+    "terraform": true,
+    "toml": true,
+    "xml": true
+  }
 }

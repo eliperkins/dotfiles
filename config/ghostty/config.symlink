@@ -6,8 +6,10 @@ font-variation-bold = wght=600
 window-padding-x = 10
 window-padding-y = 10
 window-padding-balance = true
+quick-terminal-position = top
 quick-terminal-screen = macos-menu-bar
 quick-terminal-animation-duration = 0.15
+quick-terminal-size = 40%,100%
 background-opacity = 0.8
 background-blur-radius = 20
 resize-overlay-position = bottom-right
@@ -20,3 +22,4 @@ unfocused-split-fill = 000000
 
 keybind = global:ctrl+escape=toggle_quick_terminal
 keybind = super+f=write_screen_file:open
+keybind = shift+enter=text:\n

@@ -70,3 +70,5 @@ unsetopt LIST_BEEP
 
 # Warn before quitting with background jobs
 setopt CHECK_JOBS
+
+export GPG_TTY=$(tty)

@@ -27,10 +27,6 @@ if command -v fd &> /dev/null; then
     alias find='fd'
 fi
 
-if command -v rg &> /dev/null; then
-    alias grep='rg'
-fi
-
 if command -v dust &> /dev/null; then
     alias du='dust'
 fi
