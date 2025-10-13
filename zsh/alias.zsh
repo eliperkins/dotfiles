@@ -57,3 +57,4 @@ fi
 
 alias vscode="/usr/local/bin/code"
 alias code="zed"
+alias xcclaude='claude --add-dir "$(xcode-select -p)/../PlugIns/IDEIntelligenceChat.framework/Versions/A/Resources/AdditionalDocumentation"'
