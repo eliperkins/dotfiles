@@ -11,7 +11,9 @@ alias vv="nvim ."
 alias vim="nvim"
 
 # Modern Unix https://github.com/ibraheemdev/modern-unix
-if command -v lsd &> /dev/null; then
+if command -v eza &> /dev/null; then
+    alias ls='eza --icons=always -laF'
+elif command -v lsd &> /dev/null; then
     alias ls='lsd -laF'
 elif command -v exa &> /dev/null; then
     alias ls='exa -laF'
@@ -57,4 +59,8 @@ fi
 
 alias vscode="/usr/local/bin/code"
 alias code="zed"
-alias xcclaude='claude --add-dir "$(xcode-select -p)/../PlugIns/IDEIntelligenceChat.framework/Versions/A/Resources/AdditionalDocumentation"'
+alias xcclaude='USE_BUILTIN_RIPGREP=0 claude --add-dir "$(xcode-select -p)/../PlugIns/IDEIntelligenceChat.framework/Versions/A/Resources/AdditionalDocumentation"'
+
+function xcrecord() {
+    xcrun simctl io booted recordVideo ~/Desktop/$(uuidgen).mp4
+}

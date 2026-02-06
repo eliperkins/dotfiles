@@ -4,7 +4,6 @@
   },
   "context_servers": {
     "mcp-server-context7": {
-      "source": "extension",
       "settings": {
         "default_minimum_tokens": "10000"
       }
@@ -39,7 +38,6 @@
     },
     "GraphQL": {
       "tab_size": 2,
-      "formatter": "language_server",
       "format_on_save": "on"
     }
   },
@@ -74,7 +72,7 @@
     "terminal.ansi.white": "#f1f1f0",
     "terminal.ansi.bright_white": "#f1f1f0"
   },
-  "file_scan_exclusions": ["node_modules", ".git/**"],
+  "file_scan_exclusions": ["node_modules", ".git/**", ".yarn/**", ".pnp.*"],
   "auto_install_extensions": {
     "dockerfile": true,
     "git-firefly": true,

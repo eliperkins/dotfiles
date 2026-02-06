@@ -163,11 +163,11 @@ prompt_pure_preprompt_render() {
 	# Execution time.
 	[[ -n $prompt_pure_cmd_exec_time ]] && preprompt_parts+=('%F{$prompt_pure_colors[execution_time]}${prompt_pure_cmd_exec_time}%f')
 
-	local cleaned_ps1=$PROMPT
+	local cleaned_ps1=${prompt_pure_original_prompt:-$PROMPT}
 	local -H MATCH MBEGIN MEND
-	if [[ $PROMPT = *$prompt_newline* ]]; then
-		# Remove everything from the prompt until the newline. This
-		# removes the preprompt and only the original PROMPT remains.
+	if [[ -z $prompt_pure_original_prompt ]] && [[ $PROMPT = *$prompt_newline* ]]; then
+		# Fallback: remove everything from the prompt until the newline.
+		# This removes the preprompt and only the original PROMPT remains.
 		cleaned_ps1=${PROMPT##*${prompt_newline}}
 	fi
 	unset MATCH MBEGIN MEND
@@ -860,6 +860,12 @@ prompt_pure_setup() {
 	# Prompt turns red if the previous command didn't exit with 0.
 	local prompt_indicator='%(?.%F{$prompt_pure_colors[prompt:success]}.%F{$prompt_pure_colors[prompt:error]})${prompt_pure_state[prompt]}%f '
 	PROMPT+=$prompt_indicator
+
+	# Store the original prompt (without preprompt) so that preprompt_render
+	# can use it directly instead of parsing it out of PROMPT. This avoids
+	# breakage when terminal shell integrations (e.g. Ghostty) inject OSC
+	# marks into PROMPT that interfere with pattern-based extraction.
+	typeset -g prompt_pure_original_prompt=$PROMPT
 
 	# Indicate continuation prompt by … and use a darker color for it.
 	PROMPT2='%F{$prompt_pure_colors[prompt:continuation]}… %(1_.%_ .%_)%f'$prompt_indicator
