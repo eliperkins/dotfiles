@@ -4,6 +4,3 @@
   signingkey = 2E81378F264A8ACE
 [credential]
   helper = osxkeychain
-[maintenance]
-  repo = /Users/eliperkins/src/github/mobile-ios
-  repo = /Users/eliperkins/src/github/github
