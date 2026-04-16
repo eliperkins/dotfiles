@@ -14,6 +14,10 @@
   plus-color = "#012800"
   minus-color = "#340001"
   syntax-theme = Monokai Extended
+  navigate = true
+  hyperlinks = true
+  hyperlinks-file-link-format = "zed://file/{path}:{line}"
+  true-color = always
 [interactive]
   diffFilter = delta --color-only
 [init]
@@ -70,6 +74,8 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+[diff]
+  colorMoved = default
 [diff "sqlite3"]
   textconv = sqlite3 $1 .dump
 [includeIf "gitdir:~/src/"]
@@ -88,6 +94,9 @@
 [credential "https://github.com"]
 	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
+	username = eliperkins
 [credential "https://gist.github.com"]
 	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
+[merge]
+	conflictStyle = zdiff3
