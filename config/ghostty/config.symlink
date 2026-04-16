@@ -26,3 +26,5 @@ unfocused-split-fill = 000000
 keybind = global:ctrl+escape=toggle_quick_terminal
 keybind = super+f=write_screen_file:open
 keybind = shift+enter=text:\n
+
+scrollback-limit = 524288000
