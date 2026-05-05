@@ -1,111 +1,289 @@
-tap "crowdin/crowdin"
+tap "cameroncooke/axe"
+tap "cirruslabs/cli"
+tap "dlvhdr/formulae"
+tap "felixherrmann/tap"
+tap "hashicorp/tap"
+tap "homebrew-ffmpeg/ffmpeg"
 tap "kylef/formulae"
+tap "ldomaradzki/xcsift"
 tap "majd/repo"
-tap "michaeleisel/zld"
-tap "microsoft/git"
+tap "mihaelamj/tap"
 tap "neovim/neovim"
+tap "noahgorstein/tap"
 tap "powershell/tap"
 tap "qmk/qmk"
+tap "swiftedmind/cli"
+# CLI tool for working with Architecture Decision Records
 brew "adr-tools"
+# General-purpose data compression with high compression ratio
 brew "xz"
+# GNU internationalization (i18n) and localization (l10n) library
 brew "gettext"
+# Core application library for C
 brew "glib"
+# Tool for reverse engineering 3rd party, closed, binary Android apps
 brew "apktool"
+# Library for command-line editing
 brew "readline"
-brew "sqlite"
+# Download with resuming and segmented downloading
 brew "aria2"
+# Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# Official Amazon AWS command-line interface
 brew "awscli"
+# Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# C library of Git core methods that is re-entrant and linkable
 brew "libgit2"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Get/set bluetooth power and discoverable state
 brew "blueutil"
+# Freely available high-quality data compressor
 brew "bzip2"
+# Object-file caching compiler wrapper
 brew "ccache"
+# Collection of LLDB commands to assist debugging iOS apps
 brew "chisel"
+# Statistics utility to count lines of code
 brew "cloc"
+# Utility for connecting securely to your Cloud SQL instances
+brew "cloud-sql-proxy"
+# Cross-platform make
 brew "cmake"
+# Create and run Linux containers using lightweight virtual machines
+brew "container"
+# GNU File, Shell, and Text utilities
 brew "coreutils"
+# Top-like interface for container metrics
 brew "ctop"
+# Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# USB programmer
 brew "dfu-util"
+# Pack, ship and run any application as a lightweight container
 brew "docker"
+# More intuitive version of du in rust
 brew "dust"
-brew "ffmpeg"
+# Modern, maintained replacement for ls
+brew "eza"
+# Database version control to control migrations
+brew "flyway"
+# Firmware update daemon
+brew "fwupd"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# GitHub command-line tool
 brew "gh"
+# Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Git extension for versioning large files
 brew "git-lfs"
+# Common error values for all GnuPG components
 brew "libgpg-error"
+# GNU Privacy Guard (OpenPGP)
 brew "gnupg"
-brew "go"
+# General purpose AT Protocol CLI in Go
+brew "goat"
+# Package compiler and linker metadata toolkit
 brew "pkgconf"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
+# Perfect hash function generator
+brew "gperf"
+# Library to render SVG files using Cairo
 brew "librsvg"
+# Generic library support script
 brew "libtool"
+# Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
+# Protocol buffers (Google's data interchange format)
 brew "protobuf"
+# Next generation open source RPC library and framework
 brew "grpc"
+# Toolkit for creating graphical user interfaces
 brew "gtk+3"
+# Library for communicating with USB and Bluetooth HID devices
 brew "hidapi"
+# Process manager for Procfile-based applications
 brew "hivemind"
+# Uses CSS selectors to extract bits content from HTML files
+brew "htmlq"
+# Improved top (interactive process viewer)
 brew "htop"
+# Command-line benchmarking tool
+brew "hyperfine"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 brew "libheif"
+# Tools and libraries to manipulate images in select formats
 brew "imagemagick"
+# Tool to measure maximum TCP and UDP bandwidth
+brew "iperf"
+# Implementation of malloc emphasizing fragmentation avoidance
 brew "jemalloc"
+# Lightweight and flexible command-line JSON processor
 brew "jq"
+# TUI playground to experiment and play with jq
+brew "jqp"
+# Sane PBXProj files
+brew "kin"
+# Graphical front-end for GCC's coverage testing tool (gcov)
 brew "lcov"
+# Pager program similar to more
+brew "less"
+# Implementation of the file(1) command
+brew "libmagic"
+# Multi-platform support library with a focus on asynchronous I/O
 brew "libuv"
+# Find what models run on your hardware
+brew "llmfit"
+# Clone of ls with colorful output, file type icons, and more
 brew "lsd"
+# Mac App Store command-line interface
 brew "mas"
-brew "md5sha1sum"
+# Hash utilities
+brew "md5sha1sum", link: true
+# Syntax-aware git merge driver
+brew "mergiraf"
+# Deep clean and optimize your Mac
+brew "mole"
+# Remote terminal application
 brew "mosh"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-brew "nginx", restart_service: :changed
+# Small build system for use with gyp or CMake
 brew "ninja"
+# OCaml package manager
 brew "opam"
+# On-chip debugging, in-system programming and boundary-scan testing
+brew "open-ocd"
+# SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
+# PNG file optimizer
+brew "optipng"
+# Painless compression and decompression for your terminal
+brew "ouch"
+# Process manager for Procfile-based applications and tmux
 brew "overmind"
+# Swiss-army knife of markup format conversion
 brew "pandoc"
+# Shell command parallelization utility
 brew "parallel"
+# Identify unused code in Swift projects
+brew "periphery"
+# Pinentry for GPG on Mac
 brew "pinentry-mac"
+# Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Optimizer for PNG files
 brew "pngcrush"
+# PNG image optimizing utility
 brew "pngquant"
+# Object-relational database system
+brew "postgresql@18"
+# Linter for prose
 brew "proselint"
+# GNOME Python bindings (based on GObject Introspection)
 brew "pygobject3"
-brew "redis", restart_service: :changed
+# Python interface to Tcl/Tk
+brew "python-tk@3.14"
+# Generic machine emulator and virtualizer
+brew "qemu"
+# Software environment for statistical computing
+brew "r"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Readline wrapper: adds readline support to tools that lack it
 brew "rlwrap"
+# Install various Ruby versions and implementations
 brew "ruby-build"
-brew "rust"
+# Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# Autoformat shell script source code
+brew "shfmt"
+# Framework and command-line tool for interacting with SourceKit
 brew "sourcekitten"
-brew "subversion"
+# Formatting tool for reformatting Swift code
+brew "swiftformat"
+# Tool to enforce Swift style and conventions
 brew "swiftlint"
+# User interface to the TELNET protocol
 brew "telnet"
+# Code-search similar to ack
 brew "the_silver_searcher"
+# Text interface for Git repositories
 brew "tig"
+# Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Tool for working with usage-spec CLIs
+brew "usage"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Syntax-aware linter for prose
 brew "vale"
+# Command-line client for WebSockets
 brew "websocat"
+# Internet file retriever
 brew "wget"
+# Little beautifier tool for xcodebuild
+brew "xcbeautify"
+# Tool to parse the SLF serialization format used by Xcode
+brew "xclogparser"
+# Build server protocol implementation for integrating Xcode with sourcekit-lsp
+brew "xcode-build-server"
+# Generate your Xcode project from a spec file and your folder structure
 brew "xcodegen"
+# Best command-line tool to install and switch between multiple versions of Xcode
 brew "xcodes"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
+# Tracks most-used directories to make cd smarter
 brew "z"
+# General-purpose lossless data-compression library
 brew "zlib"
+# Shell extension to navigate your filesystem faster
 brew "zoxide"
+# UNIX shell (command interpreter)
 brew "zsh"
-brew "crowdin/crowdin/crowdin@3"
-brew "powershell/tap/powershell"
+# CLI tool for interacting with iOS Simulators via accessibility and HID APIs
+brew "cameroncooke/axe/axe"
+# Non-interactive ssh password auth Files
+brew "cirruslabs/cli/sshpass"
+# Run macOS and Linux VMs on Apple Hardware
+brew "cirruslabs/cli/tart"
+# Git diff pager based on delta but with a file tree, à la GitHub
+brew "dlvhdr/formulae/diffnav"
+# A command-line tool to generate a JSON, PLIST, Settings.bundle or PDF file with all used SPM-dependencies of an Xcode project or workspace.
+brew "felixherrmann/tap/swift-package-list"
+# Play, record, convert, and stream audio and video
+brew "homebrew-ffmpeg/ffmpeg/ffmpeg"
+# Swift tool to parse xcodebuild output for coding agents
+brew "ldomaradzki/xcsift/xcsift"
+# MCP server for Apple docs, Swift Evolution, sample code, and packages
+brew "mihaelamj/tap/cupertino"
+# Read-only Swift code inspection tool built on SourceKit-LSP
+brew "swiftedmind/cli/monocle"
+# Command-line helper for the 1Password password manager
 cask "1password-cli@beta"
+# Password manager
 cask "1password@beta"
+# Automatic tiling window manager similar to xmonad
 cask "amethyst"
+# Prevents audio balance from drifting left or right
 cask "balance-lock"
+# Tool to customise input devices and automate computer systems
 cask "bettertouchtool"
+# Terminal-based AI coding assistant
+cask "claude-code"
+# Create and run Linux containers using lightweight virtual machines
+cask "container"
+# Update and configure Elgato Capture devices
 cask "elgato-capture-device-utility"
+# Control your Elgato key lights
 cask "elgato-control-center"
-cask "eloston-chromium", args: { appdir: "/Applications" }
+# Collaborative team software
 cask "figma@beta"
 cask "font-fira-code", args: { appdir: "/Applications" }
 cask "font-fira-mono", args: { appdir: "/Applications" }
@@ -121,105 +299,97 @@ cask "font-meslo-lg", args: { appdir: "/Applications" }
 cask "font-montserrat", args: { appdir: "/Applications" }
 cask "font-open-sans", args: { appdir: "/Applications" }
 cask "font-source-code-pro", args: { appdir: "/Applications" }
+# GIT client
 cask "fork"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-cask "git-credential-manager"
-cask "ipatool"
-cask "iterm2"
+# CLI tool for searching and downloading iOS app packages from the App Store
+cask "majd/repo/ipatool"
+# Menu bar manager
 cask "jordanbaird-ice"
+# Spot and merge differences in text and image files or folders
 cask "kaleidoscope"
-cask "kitty"
+# Adaptive brightness for external displays
 cask "lunar"
+# Native app email client for Gmail
 cask "mimestream"
+# Tool to create text-based art
 cask "monodraw"
+# Silence embarrassing notifications while screensharing
 cask "muzzle"
+# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Replacement for Docker Desktop
 cask "orbstack"
+# Monitors computer mic and webcam
 cask "oversight"
+# Control your tools with a few keystrokes
 cask "raycast"
+# Time optimising application
 cask "rescuetime"
+# Store SSH keys in the Secure Enclave
 cask "secretive"
+# Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
+# Easier access to Xcode Simulator functionality
 cask "sim-genie"
+# Team communication and collaboration software
 cask "slack@beta"
-cask "spotify"
-cask "tailscale"
+# Mesh VPN based on WireGuard
+cask "tailscale-app"
+# Utility to notify about the latest Apple tool releases (including Beta releases)
 cask "toolreleases"
-cask "visual-studio-code"
+# Virtualization tool
+cask "virtualbuddy"
+# Remote desktop application focusing on security
 cask "vnc-viewer"
+# Allows access to WWDC livestreams, videos and sessions
 cask "wwdc"
-cask "xcodes"
-cask "yubico-yubikey-manager"
+# Install and switch between multiple versions of Xcode
+cask "xcodes-app"
+# Multiplayer code editor
 cask "zed"
+# Video communication and virtual meeting platform
 cask "zoom"
-mas "1Blocker", id: 1365531024
-mas "1Password for Safari", id: 0
+mas "1Password for Safari", id: 1569813296
 mas "Apple Configurator", id: 1037126344
 mas "Blackmagic Disk Speed Test", id: 425264550
 mas "Buildwatch", id: 1523347474
 mas "Calcbot", id: 931657367
-mas "Chimeful", id: 0
+mas "Crouton", id: 1461650987
 mas "Dato", id: 1470584107
 mas "Developer", id: 640199958
 mas "Fantastical", id: 975937182
 mas "Flighty", id: 1358823008
-mas "Gifski", id: 1351639930
-mas "Helm", id: 0
-mas "HyperList", id: 0
-mas "iMovie", id: 408981434
+mas "Gifski", id: 0
+mas "GitHub HyperList", id: 0
+mas "Helm for App Store Connect", id: 0
+mas "Itsyhome", id: 6758070650
 mas "Ivory", id: 6444602274
+mas "Kagi for Safari", id: 1622835804
 mas "Keynote", id: 409183694
+mas "Keynote", id: 361285480
 mas "Numbers", id: 409203825
+mas "Numbers", id: 361304891
 mas "Pages", id: 409201541
+mas "Pages", id: 361309726
 mas "Pastebot", id: 1179623856
-mas "Sage", id: 0
 mas "Screens 5", id: 1663047912
-mas "Swift Playground", id: 1496833156
+mas "Semantic SF", id: 6738750845
 mas "TestFlight", id: 899247664
 mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
-mas "Windows App", id: 1295203466
-vscode "akamud.vscode-theme-onelight"
-vscode "apollographql.vscode-apollo"
-vscode "bierner.markdown-mermaid"
-vscode "castwide.solargraph"
-vscode "dbaeumer.vscode-eslint"
-vscode "docker.docker"
-vscode "dotjoshjohnson.xml"
-vscode "eamodio.gitlens"
-vscode "editorconfig.editorconfig"
-vscode "esbenp.prettier-vscode"
-vscode "foam.foam-vscode"
-vscode "github.codespaces"
-vscode "github.copilot"
-vscode "github.copilot-chat"
-vscode "graphql.vscode-graphql"
-vscode "graphql.vscode-graphql-syntax"
-vscode "jnbt.vscode-rufo"
-vscode "kaiwood.endwise"
-vscode "koichisasada.vscode-rdbg"
-vscode "kortina.vscode-markdown-notes"
-vscode "llvm-vs-code-extensions.lldb-dap"
-vscode "manuelpuyol.erb-linter"
-vscode "ms-azuretools.vscode-bicep"
-vscode "ms-azuretools.vscode-docker"
-vscode "ms-dotnettools.csdevkit"
-vscode "ms-dotnettools.csharp"
-vscode "ms-dotnettools.vscode-dotnet-runtime"
-vscode "ms-dotnettools.vscodeintellicode-csharp"
-vscode "ms-vscode-remote.remote-containers"
-vscode "ms-vscode.hexeditor"
-vscode "ms-vscode.powershell"
-vscode "philipbe.theme-gray-matter"
-vscode "sdras.night-owl"
-vscode "stylelint.vscode-stylelint"
-vscode "swiftlang.swift-vscode"
-vscode "syler.sass-indented"
-vscode "tchayen.markdown-links"
-vscode "vadimcn.vscode-lldb"
-vscode "vknabel.vscode-apple-swift-format"
-vscode "wheredoesyourmindgo.nushu-vscode-theme"
-vscode "will-wow.vscode-alternate-file"
-vscode "yzhang.markdown-all-in-one"
-vscode "zhuangtongfa.material-theme"
-vscode "zxh404.vscode-proto3"
+mas "ToothFairy", id: 1191449274
+mas "Wipr", id: 1662217862
+go "cmd/go"
+go "github.com/psampaz/go-mod-outdated"
+go "cmd/gofmt"
+go "github.com/golangci/golangci-lint/v2/cmd/golangci-lint"
+go "golang.org/x/tools/gopls"
+go "github.com/rakyll/gotest"
+go "github.com/jondot/goweight"
+go "github.com/cespare/reflex"
+go "github.com/swaggo/swag/cmd/swag"
+uv "zmk"
