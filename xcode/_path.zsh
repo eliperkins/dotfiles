@@ -1,1 +1,1 @@
-export PATH="$(brew --prefix)/opt/llvm/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/llvm/bin:$PATH"

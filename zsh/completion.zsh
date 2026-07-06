@@ -22,7 +22,7 @@ zstyle ':completion:*:descriptions' format '%B%d%b'
 zstyle ':completion:*:warnings' format 'No matches for: %d'
 
 if [[ $OSTYPE == "darwin"* ]]; then
-    site_functions="$(brew --prefix)/share/zsh/site-functions"
+    site_functions="$HOMEBREW_PREFIX/share/zsh/site-functions"
 fi
 
 if test -f "$site_functions"

@@ -11,25 +11,25 @@ alias vv="nvim ."
 alias vim="nvim"
 
 # Modern Unix https://github.com/ibraheemdev/modern-unix
-if command -v eza &> /dev/null; then
+if command -v eza &>/dev/null; then
     alias ls='eza --icons=always -laF'
-elif command -v lsd &> /dev/null; then
+elif command -v lsd &>/dev/null; then
     alias ls='lsd -laF'
-elif command -v exa &> /dev/null; then
+elif command -v exa &>/dev/null; then
     alias ls='exa -laF'
 else
     alias ls='ls -la'
 fi
 
-if command -v bat &> /dev/null; then
+if command -v bat &>/dev/null; then
     alias cat="bat --theme='Sublime Snazzy'"
 fi
 
-if command -v fd &> /dev/null; then
+if command -v fd &>/dev/null; then
     alias find='fd'
 fi
 
-if command -v dust &> /dev/null; then
+if command -v dust &>/dev/null; then
     alias du='dust'
 fi
 
@@ -46,7 +46,6 @@ alias reload!='. ~/.zshrc'
 
 # mine
 alias s='cd ~/src'
-
 
 # Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"

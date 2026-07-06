@@ -27,10 +27,11 @@ done
 fpath+=~/.zfunc
 
 autoload -Uz compinit
-for dump in ~/.zcompdump(N.mh+24); do
+if [[ -n ~/.zcompdump(#qNmh-24) ]]; then
+  compinit -C
+else
   compinit
-done
-compinit -C
+fi
 
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}

@@ -1,2 +1,3 @@
 export HOMEBREW_DOWNLOAD_CONCURRENCY=auto
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+export HOMEBREW_PREFIX=/opt/homebrew
+export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH"
